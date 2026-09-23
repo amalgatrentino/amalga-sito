@@ -155,6 +155,20 @@ a:focus-visible, button:focus-visible, .altscale a:focus-visible{
 .altscale.on-light .seg.current{color:var(--clay);}
 .altscale.on-light .rule{background:var(--line);}
 
+@media (max-width: 480px) {
+  .altscale{
+    flex-direction: column;
+    align-items: inherit;
+    gap: 10px;
+  }
+  .altscale .rule{
+    display: none;
+  }
+  .altscale .seg{
+    padding: 0;
+  }
+}
+
 /* ---------- HERO (page-level, smaller than home) ---------- */
 .page-hero{
   position:relative;
