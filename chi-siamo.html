@@ -10,7 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .page-hero{ --hero-img: url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-famiglia-2-2026-1024x682.jpg'); min-height:56vh; }
+  .page-hero{ --hero-img: url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-famiglia-2-2026-1024x682.jpg'); --hero-pos: center 10%; min-height:56vh; }
+  .page-hero-content{
+    display:flex; flex-direction:column; align-items:flex-end; text-align:right;
+    max-width:100%;
+  }
   .values{
     margin-top:56px; display:grid; grid-template-columns:repeat(3,1fr); gap:36px;
     border-top:1px solid var(--line); padding-top:40px;
