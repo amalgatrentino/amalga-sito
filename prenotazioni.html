@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prenotazioni · AMALGA</title>
+<meta name="description" content="Prenota il tuo soggiorno o la tua cena a El Malget, Malga Bordolona o Malga Bordolona Alta. Contatti diretti con la famiglia AMALGA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-hero{ --hero-img: url('https://www.amalgatrentino.com/wp-content/uploads/2026/06/testata_Amalga_2-1024x488.jpg'); min-height:48vh; }
+  .book-grid{
+    margin-top:56px; display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .book-card{background:var(--cream); padding:36px 30px; display:flex; flex-direction:column;}
+  .book-card .quota{
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--clay); margin-bottom:10px;
+  }
+  .book-card h3{font-size:1.35rem; color:var(--pine-deep); margin-bottom:14px;}
+  .book-card p{color:#544f3f; font-size:0.92rem; margin-bottom:6px;}
+  .book-card .cta{margin-top:20px; align-self:flex-start;}
+  @media(max-width:820px){.book-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="bar">
+    <a href="index.html" class="wordmark"><img src="amalga-logo-pine.png" alt="AMALGA" class="logo-img"></a>
+    <button class="nav-toggle" aria-expanded="false">Menu</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="el-malget.html">El Malget</a>
+      <a href="malga-bordolona.html">Malga Bordolona</a>
+      <a href="malga-bordolona-alta.html">Bordolona Alta</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="shop.html">Shop</a>
+      <a href="prenotazioni.html" class="nav-cta active">Prenota</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-content">
+    <span class="eyebrow on-dark">Prenotazioni</span>
+    <h1>Vieni a trovarci</h1>
+    <p class="sub">Ogni malga ha il suo referente diretto: scrivi o chiama per prenotare una cena, un soggiorno o una visita.</p>
+  </div>
+</header>
+
+<section class="section reveal">
+  <div class="wrap">
+    <span class="eyebrow">Scegli dove</span>
+    <h2>Tre malghe, tre modi di prenotare</h2>
+    <p class="lede">Contatta direttamente la famiglia: nessun intermediario, solo una chiamata, un messaggio o una email.</p>
+
+    <div class="book-grid">
+      <div class="book-card">
+        <span class="quota">Val di Non</span>
+        <h3>El Malget</h3>
+        <p>Ristorante, agriturismo, stalla, caseificio, fattoria didattica.</p>
+        <p>Malga Pradedont, 38019 Ville d'Anaunia (TN)</p>
+        <p>Katia: +39 338 178 3221</p>
+        <p>info@amalgatrentino.com</p>
+        <a href="mailto:info@amalgatrentino.com?subject=Prenotazione%20El%20Malget" class="cta">Scrivi per prenotare</a>
+      </div>
+      <div class="book-card">
+        <span class="quota">1.800 metri</span>
+        <h3>Malga Bordolona</h3>
+        <p>Ristorante, agriturismo, stalla, caseificio.</p>
+        <p>Loc. Malga Bordolona, 38020 Bresimo (TN)</p>
+        <p>Whatsapp Luca: +39 348 369 5792</p>
+        <p>info@amalgatrentino.com</p>
+        <a href="mailto:info@amalgatrentino.com?subject=Prenotazione%20Malga%20Bordolona" class="cta">Scrivi per prenotare</a>
+      </div>
+      <div class="book-card">
+        <span class="quota">2.000 metri</span>
+        <h3>Malga Bordolona Alta</h3>
+        <p>Rifugio di montagna, stalla, alpeggio.</p>
+        <p>Loc. Malga Bordolona Alta, 38020 Bresimo (TN)</p>
+        <p>Whatsapp Luca: +39 348 369 5792</p>
+        <p>info@amalgatrentino.com</p>
+        <a href="mailto:info@amalgatrentino.com?subject=Prenotazione%20Malga%20Bordolona%20Alta" class="cta">Scrivi per prenotare</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt reveal">
+  <div class="wrap" style="max-width:700px;">
+    <span class="eyebrow">Prima di partire</span>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);">Qualche cosa utile da sapere</h2>
+    <p class="lede" style="margin-top:20px;">In quota il meteo cambia in fretta e le strade di montagna richiedono attenzione: consigliamo abbigliamento comodo, scarpe o scarponcini da trekking, e di confermare sempre l'orario con un messaggio prima di partire, soprattutto per le malghe più alte.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="amalga-logo-cream.png" alt="AMALGA" class="footer-logo-img">
+        <p class="footer-tagline">Tre malghe, tre quote, un'unica famiglia. Val di Non, Trentino.</p>
+      </div>
+      <div>
+        <h5>El Malget</h5>
+        <p>Malga Pradedont, 38019 Ville d'Anaunia (TN)</p>
+        <a href="tel:+390000000000">Katia: +39 338 178 3221</a>
+        <a href="mailto:info@amalgatrentino.com">info@amalgatrentino.com</a>
+      </div>
+      <div>
+        <h5>Malga Bordolona</h5>
+        <p>Loc. Malga Bordolona, 38020 Bresimo (TN)</p>
+        <a href="#">Whatsapp Luca: +39 348 369 5792</a>
+        <a href="mailto:info@amalgatrentino.com">info@amalgatrentino.com</a>
+      </div>
+      <div>
+        <h5>Seguici</h5>
+        <a href="https://www.instagram.com/amalgatrentino/">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61591222905291">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Amalga Trentino</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shop · AMALGA</title>
+<meta name="description" content="I formaggi e i prodotti del caseificio di Malga Bordolona, ora anche online. L'Eroico, il Casolet, ricotta, burro, yogurt e panna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-hero{ --hero-img: url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-piatti-2026-18-1024x650.jpg'); min-height:50vh; }
+
+  .shop-note{
+    background:var(--cream-2); border:1px solid var(--line); border-radius:2px;
+    padding:16px 20px; margin-top:36px; font-size:0.88rem; color:#6b6552; max-width:640px;
+  }
+  .shop-note strong{color:var(--pine-deep);}
+
+  .shop-layout{
+    display:grid; grid-template-columns:1fr 320px; gap:56px; align-items:start; margin-top:56px;
+  }
+  .product-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--line); border:1px solid var(--line);
+  }
+  .product-card{background:var(--cream); padding:28px 26px; display:flex; flex-direction:column;}
+  .product-card .unit{
+    font-family:'Space Mono', monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--clay); margin-bottom:8px;
+  }
+  .product-card h3{font-size:1.2rem; color:var(--pine-deep);}
+  .product-card p.desc{margin-top:10px; color:#544f3f; font-size:0.88rem; flex:1;}
+  .product-card .row{
+    margin-top:20px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .product-card .price{font-family:'Fraunces', serif; font-size:1.15rem; color:var(--pine-deep);}
+  .qty{
+    display:flex; align-items:center; gap:0; border:1px solid var(--line); border-radius:2px; overflow:hidden;
+  }
+  .qty button{
+    background:var(--cream-2); border:none; width:30px; height:30px; cursor:pointer;
+    font-family:'Space Mono', monospace; font-size:14px; color:var(--pine-deep);
+  }
+  .qty button:hover{background:var(--butter);}
+  .qty span{width:32px; text-align:center; font-family:'Space Mono', monospace; font-size:13px;}
+  .add-btn{
+    margin-top:14px; width:100%; padding:11px; background:var(--pine-deep); color:#F6F1E6; border:none;
+    border-radius:2px; font-family:'Space Mono', monospace; font-size:11.5px; letter-spacing:0.06em;
+    text-transform:uppercase; cursor:pointer; transition:background 0.2s ease;
+  }
+  .add-btn:hover{background:var(--pine);}
+  .add-btn.added{background:var(--clay);}
+
+  .cart-panel{
+    position:sticky; top:100px; background:var(--pine-deep); color:#EFE9D8; padding:30px 26px; border-radius:2px;
+  }
+  .cart-panel h3{font-family:'Fraunces', serif; font-weight:500; font-size:1.2rem; color:#FBF7EE; margin-bottom:4px;}
+  .cart-panel .cart-eyebrow{
+    font-family:'Space Mono', monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--butter);
+    display:block; margin-bottom:10px;
+  }
+  .cart-empty{color:#9C9683; font-size:0.88rem; margin-top:16px;}
+  .cart-items{margin-top:16px; display:flex; flex-direction:column; gap:12px;}
+  .cart-item{
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+    font-size:0.86rem; padding-bottom:12px; border-bottom:1px solid rgba(239,233,216,0.14);
+  }
+  .cart-item .name{color:#EFE9D8;}
+  .cart-item .qtyx{color:#9C9683; font-family:'Space Mono', monospace; font-size:11.5px;}
+  .cart-item .rm{
+    background:none; border:none; color:#9C9683; cursor:pointer; font-size:13px; padding:0 2px;
+  }
+  .cart-item .rm:hover{color:var(--butter);}
+  .cart-total{
+    margin-top:18px; padding-top:16px; border-top:1px solid rgba(239,233,216,0.2);
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'Fraunces', serif; font-size:1.25rem; color:#FBF7EE;
+  }
+  .cart-total .lbl{font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#9C9683;}
+  .cart-submit{
+    margin-top:20px; width:100%; padding:14px; background:var(--butter); color:#241E0F; border:none;
+    border-radius:2px; font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.06em;
+    text-transform:uppercase; cursor:pointer;
+  }
+  .cart-submit:hover{background:#E8B75A;}
+  .cart-submit:disabled{opacity:0.4; cursor:not-allowed;}
+  .cart-hint{margin-top:10px; font-size:0.76rem; color:#8C8874; line-height:1.5;}
+
+  @media(max-width:900px){
+    .shop-layout{grid-template-columns:1fr;}
+    .cart-panel{position:static;}
+  }
+  @media(max-width:600px){
+    .product-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="bar">
+    <a href="index.html" class="wordmark"><img src="amalga-logo-pine.png" alt="AMALGA" class="logo-img"></a>
+    <button class="nav-toggle" aria-expanded="false">Menu</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="el-malget.html">El Malget</a>
+      <a href="malga-bordolona.html">Malga Bordolona</a>
+      <a href="malga-bordolona-alta.html">Bordolona Alta</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="prenotazioni.html" class="nav-cta">Prenota</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-content">
+    <span class="eyebrow on-dark">Lo spaccio, ora anche online</span>
+    <h1>Shop</h1>
+    <p class="sub">I formaggi che ogni mattina nascono nel caseificio di Malga Bordolona, pronti per arrivare a casa tua.</p>
+  </div>
+</header>
+
+<section class="section reveal">
+  <div class="wrap">
+    <span class="eyebrow">Il caseificio</span>
+    <h2>Un pezzo di questa montagna</h2>
+    <p class="lede">Formaggi che raccontano l'erba dei nostri pascoli, l'aria delle Maddalene, il nostro lavoro quotidiano. Scegli i prodotti e invia la tua richiesta d'ordine: ti risponderemo direttamente per confermare disponibilità e spedizione.</p>
+
+    <div class="shop-note">
+      <strong>Nota per AMALGA:</strong> i prezzi mostrati sono indicativi, pensati solo per costruire l'esperienza d'acquisto. Andranno confermati e collegati a un vero sistema di pagamento (es. Stripe o Shopify) quando lo shop sarà attivato.
+    </div>
+
+    <div class="shop-layout">
+      <div class="product-grid" id="product-grid">
+        <!-- product cards injected by JS -->
+      </div>
+
+      <aside class="cart-panel">
+        <span class="cart-eyebrow">Il tuo ordine</span>
+        <h3>Carrello</h3>
+        <div id="cart-empty" class="cart-empty">Non hai ancora aggiunto prodotti.</div>
+        <div id="cart-items" class="cart-items"></div>
+        <div id="cart-total" class="cart-total" style="display:none;">
+          <span class="lbl">Totale indicativo</span>
+          <span id="cart-total-value">€ 0</span>
+        </div>
+        <button id="cart-submit" class="cart-submit" disabled>Invia richiesta d'ordine</button>
+        <p class="cart-hint">L'invio apre una email precompilata verso info@amalgatrentino.com con il riepilogo dei prodotti scelti. Nessun pagamento viene effettuato qui.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap reveal">
+    <span class="eyebrow on-dark">Come funziona</span>
+    <h2>Dal caseificio a casa tua</h2>
+    <div class="trio">
+      <div class="trio-item">
+        <span class="num" style="font-family:'Space Mono', monospace; font-size:12px; color:var(--butter);">01</span>
+        <h3>Scegli i prodotti</h3>
+        <p>Aggiungi al carrello i formaggi e i derivati che vuoi ricevere, con le quantità che preferisci.</p>
+      </div>
+      <div class="trio-item">
+        <span class="num" style="font-family:'Space Mono', monospace; font-size:12px; color:var(--butter);">02</span>
+        <h3>Invia la richiesta</h3>
+        <p>Ti scriviamo noi per confermare disponibilità, costi di spedizione e modalità di pagamento.</p>
+      </div>
+      <div class="trio-item">
+        <span class="num" style="font-family:'Space Mono', monospace; font-size:12px; color:var(--butter);">03</span>
+        <h3>Ritiro o spedizione</h3>
+        <p>Puoi ritirare allo spaccio di Malga Bordolona oppure ricevere i prodotti direttamente a casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="amalga-logo-cream.png" alt="AMALGA" class="footer-logo-img">
+        <p class="footer-tagline">Tre malghe, tre quote, un'unica famiglia. Val di Non, Trentino.</p>
+      </div>
+      <div>
+        <h5>El Malget</h5>
+        <p>Malga Pradedont, 38019 Ville d'Anaunia (TN)</p>
+        <a href="tel:+390000000000">Katia: +39 338 178 3221</a>
+        <a href="mailto:info@amalgatrentino.com">info@amalgatrentino.com</a>
+      </div>
+      <div>
+        <h5>Malga Bordolona</h5>
+        <p>Loc. Malga Bordolona, 38020 Bresimo (TN)</p>
+        <a href="#">Whatsapp Luca: +39 348 369 5792</a>
+        <a href="mailto:info@amalgatrentino.com">info@amalgatrentino.com</a>
+      </div>
+      <div>
+        <h5>Seguici</h5>
+        <a href="https://www.instagram.com/amalgatrentino/">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61591222905291">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Amalga Trentino</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+(function(){
+  var PRODUCTS = [
+    { id:"eroico", name:"L'Eroico", unit:"formaggio stagionato · al kg", price:28,
+      desc:"Il nostro stagionato: memoria dei pascoli d'alta quota, carattere deciso." },
+    { id:"casolet", name:"Casolet", unit:"formaggio fresco · al kg", price:16,
+      desc:"Fresco e cremoso, da gustare in purezza o sulla polenta." },
+    { id:"ricotta", name:"Ricotta", unit:"al pezzo · 250 g", price:5,
+      desc:"Profumata, lavorata la mattina stessa della cagliata." },
+    { id:"burro", name:"Burro", unit:"al panetto · 250 g", price:6,
+      desc:"Colore giallo paglierino, dal latte crudo delle nostre mucche." },
+    { id:"yogurt", name:"Yogurt", unit:"al vasetto · 500 g", price:4,
+      desc:"Semplice, cremoso, senza aggiunte: solo latte di malga." },
+    { id:"panna", name:"Panna", unit:"al vasetto · 250 ml", price:3.5,
+      desc:"Fresca, per completare i piatti di montagna a casa tua." }
+  ];
+
+  var cart = {}; // in-memory only, id -> qty
+
+  var grid = document.getElementById('product-grid');
+  PRODUCTS.forEach(function(p){
+    var card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML =
+      '<span class="unit">' + p.unit + '</span>' +
+      '<h3>' + p.name + '</h3>' +
+      '<p class="desc">' + p.desc + '</p>' +
+      '<div class="row">' +
+        '<span class="price">€ ' + p.price.toFixed(2).replace('.00','').replace('.', ',') + '</span>' +
+        '<div class="qty">' +
+          '<button type="button" data-act="dec" data-id="' + p.id + '" aria-label="Diminuisci quantità">−</button>' +
+          '<span id="qty-' + p.id + '">0</span>' +
+          '<button type="button" data-act="inc" data-id="' + p.id + '" aria-label="Aumenta quantità">+</button>' +
+        '</div>' +
+      '</div>' +
+      '<button type="button" class="add-btn" data-id="' + p.id + '">Aggiungi al carrello</button>';
+    grid.appendChild(card);
+  });
+
+  function getQty(id){ return cart[id] || 0; }
+
+  grid.addEventListener('click', function(e){
+    var btn = e.target.closest('button');
+    if(!btn) return;
+    var id = btn.getAttribute('data-id');
+    var product = PRODUCTS.find(function(p){ return p.id === id; });
+    if(!product) return;
+
+    if(btn.classList.contains('add-btn')){
+      var q = document.getElementById('qty-' + id);
+      var current = parseInt(q.textContent, 10);
+      var toAdd = current > 0 ? current : 1;
+      cart[id] = (cart[id] || 0) + toAdd;
+      if(current === 0){ q.textContent = '0'; }
+      btn.textContent = 'Aggiunto ✓';
+      btn.classList.add('added');
+      setTimeout(function(){
+        btn.textContent = 'Aggiungi al carrello';
+        btn.classList.remove('added');
+      }, 1100);
+      renderCart();
+      return;
+    }
+
+    var act = btn.getAttribute('data-act');
+    var qEl = document.getElementById('qty-' + id);
+    var val = parseInt(qEl.textContent, 10);
+    if(act === 'inc') val += 1;
+    if(act === 'dec') val = Math.max(0, val - 1);
+    qEl.textContent = val;
+  });
+
+  var cartItemsEl = document.getElementById('cart-items');
+  var cartEmptyEl = document.getElementById('cart-empty');
+  var cartTotalEl = document.getElementById('cart-total');
+  var cartTotalValueEl = document.getElementById('cart-total-value');
+  var submitBtn = document.getElementById('cart-submit');
+
+  function renderCart(){
+    var ids = Object.keys(cart).filter(function(id){ return cart[id] > 0; });
+    cartItemsEl.innerHTML = '';
+    if(ids.length === 0){
+      cartEmptyEl.style.display = 'block';
+      cartTotalEl.style.display = 'none';
+      submitBtn.disabled = true;
+      return;
+    }
+    cartEmptyEl.style.display = 'none';
+    cartTotalEl.style.display = 'flex';
+    submitBtn.disabled = false;
+
+    var total = 0;
+    ids.forEach(function(id){
+      var product = PRODUCTS.find(function(p){ return p.id === id; });
+      var qty = cart[id];
+      total += product.price * qty;
+      var row = document.createElement('div');
+      row.className = 'cart-item';
+      row.innerHTML =
+        '<span class="name">' + product.name + ' <span class="qtyx">× ' + qty + '</span></span>' +
+        '<button type="button" class="rm" data-id="' + id + '" aria-label="Rimuovi ' + product.name + '">✕</button>';
+      cartItemsEl.appendChild(row);
+    });
+    cartTotalValueEl.textContent = '€ ' + total.toFixed(2).replace('.', ',');
+  }
+
+  cartItemsEl.addEventListener('click', function(e){
+    var btn = e.target.closest('.rm');
+    if(!btn) return;
+    var id = btn.getAttribute('data-id');
+    delete cart[id];
+    var qEl = document.getElementById('qty-' + id);
+    if(qEl) qEl.textContent = '0';
+    renderCart();
+  });
+
+  submitBtn.addEventListener('click', function(){
+    var ids = Object.keys(cart).filter(function(id){ return cart[id] > 0; });
+    if(ids.length === 0) return;
+    var lines = ['Richiesta d\'ordine dal sito AMALGA:', ''];
+    var total = 0;
+    ids.forEach(function(id){
+      var product = PRODUCTS.find(function(p){ return p.id === id; });
+      var qty = cart[id];
+      total += product.price * qty;
+      lines.push('- ' + product.name + ' (' + product.unit + ') × ' + qty);
+    });
+    lines.push('');
+    lines.push('Totale indicativo: € ' + total.toFixed(2).replace('.', ','));
+    lines.push('');
+    lines.push('(prezzi da confermare)');
+    var body = encodeURIComponent(lines.join('\n'));
+    var subject = encodeURIComponent('Richiesta ordine AMALGA Shop');
+    window.location.href = 'mailto:info@amalgatrentino.com?subject=' + subject + '&body=' + body;
+  });
+})();
+</script>
+</body>
+</html>
