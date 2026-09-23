@@ -51,7 +51,12 @@
   </div>
 </header>
 
-<section class="section reveal">
+<nav class="page-jumps" aria-label="Sezioni della pagina">
+  <a href="#la-nostra-storia">La nostra storia</a>
+  <a href="#tre-malghe">Tre malghe, tre quote</a>
+</nav>
+
+<section class="section gsap-reveal" id="la-nostra-storia">
   <div class="wrap">
     <span class="eyebrow">La nostra storia</span>
     <p class="lede" style="font-family:'Fraunces', serif; font-size:1.35rem; font-weight:400; color:var(--pine-deep); max-width:760px; line-height:1.5;">
@@ -78,7 +83,7 @@
   </div>
 </section>
 
-<section class="feature-row reveal">
+<section class="feature-row gsap-reveal" id="tre-malghe">
   <div class="img" style="background-image:url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-famiglia-2-2026-1024x682.jpg')"></div>
   <div class="text">
     <span class="eyebrow">Tre malghe, tre quote</span>
@@ -121,5 +126,9 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="scroll-amalga.js"></script>
 </body>
 </html>

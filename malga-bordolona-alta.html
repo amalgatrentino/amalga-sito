@@ -52,7 +52,14 @@
   </div>
 </header>
 
-<section class="section reveal">
+<nav class="page-jumps" aria-label="Sezioni della pagina">
+  <a href="#rifugio">Il rifugio</a>
+  <a href="#soggiorno">Il soggiorno</a>
+  <a href="#alba">L'alba in quota</a>
+  <a href="#dove-siamo-alta">Dove siamo</a>
+</nav>
+
+<section class="section gsap-reveal" id="rifugio">
   <div class="wrap">
     <span class="eyebrow">Il rifugio</span>
     <h2>Dove il tempo scorre al ritmo delle stagioni</h2>
@@ -65,7 +72,7 @@
   </div>
 </section>
 
-<section class="feature-row reveal">
+<section class="feature-row gsap-reveal" id="soggiorno">
   <div class="img" style="background-image:url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/Bordolona-Alta-1024x650.jpg')"></div>
   <div class="text">
     <span class="eyebrow">Il soggiorno</span>
@@ -80,7 +87,7 @@
   </div>
 </section>
 
-<section class="section alt reveal">
+<section class="section alt gsap-reveal" id="alba">
   <div class="wrap" style="text-align:center; max-width:700px;">
     <span class="eyebrow">L'alba in quota</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);">Lo spettacolo vero comincia prima della colazione</h2>
@@ -88,8 +95,8 @@
   </div>
 </section>
 
-<section class="section dark">
-  <div class="wrap reveal">
+<section class="section dark gsap-reveal" id="dove-siamo-alta">
+  <div class="wrap">
     <span class="eyebrow on-dark">Dove siamo</span>
     <h2>Loc. Malga Bordolona Alta — Bresimo</h2>
     <div class="info-grid">
@@ -142,5 +149,9 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="scroll-amalga.js"></script>
 </body>
 </html>

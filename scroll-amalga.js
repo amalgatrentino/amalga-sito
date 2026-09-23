@@ -37,8 +37,8 @@
   });
 
   // Reveal on entry, stesso pattern di scroll.js in Viaggioperdue,
-  // applicato alle sezioni principali della Home
-  gsap.utils.toArray("#intro, #malghe, #filiera, #galleria, #chi-siamo-anteprima, #prenota")
+  // applicato a tutte le sezioni marcate .gsap-reveal, su qualunque pagina
+  gsap.utils.toArray(".gsap-reveal")
     .forEach(function (sezione) {
       gsap.from(sezione, {
         opacity: 0, y: 30, duration: 0.9, ease: "power2.out",
