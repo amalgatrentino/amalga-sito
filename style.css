@@ -170,7 +170,7 @@ a:focus-visible, button:focus-visible, .altscale a:focus-visible{
     linear-gradient(180deg, rgba(24,26,17,0.18) 0%, rgba(24,26,17,0.4) 55%, rgba(20,22,14,0.88) 100%),
     var(--hero-img);
   background-size:cover;
-  background-position:center 60%;
+  background-position:center 30%;
   z-index:0;
 }
 .page-hero-content{
