@@ -87,8 +87,17 @@
   </div>
 </header>
 
+<nav class="page-jumps" aria-label="Sezioni della pagina">
+  <a href="#intro">Il pensiero</a>
+  <a href="#malghe">Le tre malghe</a>
+  <a href="#filiera">Dal pascolo alla tavola</a>
+  <a href="#galleria">Galleria</a>
+  <a href="#chi-siamo-anteprima">Chi siamo</a>
+  <a href="#prenota">Prenota</a>
+</nav>
+
 <!-- THESIS -->
-<section class="thesis-block wrap reveal">
+<section class="thesis-block wrap" id="intro">
   <p class="lead">Non allevare per vendere, ma <em>vivere per allevare</em>. Da più di quindici anni una famiglia ha scelto la montagna con convinzione, riscoprendo mestieri antichi e costruendo, un pascolo alla volta, un luogo dove il latte appena munto diventa formaggio, e la cucina di malga torna a essere quello che era: vera.</p>
 </section>
 
@@ -132,7 +141,7 @@
 </section>
 
 <!-- CASEIFICIO / CUCINA / LATTE -->
-<section class="section dark">
+<section class="section dark" id="filiera">
   <div class="wrap reveal">
     <span class="eyebrow on-dark">Cosa facciamo, ogni giorno</span>
     <h2>Dal pascolo alla tavola, senza scorciatoie</h2>
@@ -157,7 +166,7 @@
 </section>
 
 <!-- STRIP -->
-<div class="wrap">
+<div class="wrap" id="galleria">
   <div class="strip reveal" style="margin:0; padding:96px 0;">
     <img src="https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-piatti-2026-18-1024x650.jpg" alt="Piatti della cucina di malga AMALGA">
     <img src="https://www.amalgatrentino.com/wp-content/uploads/2026/07/bordolona-36-1024x650.jpg" alt="Mucche al pascolo a Malga Bordolona">
@@ -166,7 +175,7 @@
 </div>
 
 <!-- CHI SIAMO TEASER -->
-<section class="section alt">
+<section class="section alt" id="chi-siamo-anteprima">
   <div class="wrap reveal feature-row" style="padding:0;">
     <div class="img" style="background-image:url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-famiglia-2-2026-1024x682.jpg'); border-radius:2px;"></div>
     <div class="text" style="padding-right:0;">
@@ -179,7 +188,7 @@
 </section>
 
 <!-- PRENOTA CTA -->
-<section class="section">
+<section class="section" id="prenota">
   <div class="wrap reveal" style="text-align:left;">
     <span class="eyebrow">Vieni a trovarci</span>
     <h2>Tre modi per vivere AMALGA</h2>
@@ -221,5 +230,9 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="scroll-amalga.js"></script>
 </body>
 </html>
