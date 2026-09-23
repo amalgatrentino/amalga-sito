@@ -16,6 +16,22 @@
   }
 })();
 
+// Home hero carousel
+document.addEventListener("DOMContentLoaded", function () {
+  const immagini = document.querySelectorAll(".home-hero .hero-img");
+  const segmenti = document.querySelectorAll("#homeAltscale .seg");
+  if (immagini.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let indice = 0;
+    setInterval(function () {
+      immagini[indice].classList.remove("attiva");
+      segmenti[indice].classList.remove("current");
+      indice = (indice + 1) % immagini.length;
+      immagini[indice].classList.add("attiva");
+      segmenti[indice].classList.add("current");
+    }, 5000);
+  }
+});
+
 // Mobile nav toggle
 (function(){
   var btn = document.querySelector('.nav-toggle');

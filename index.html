@@ -19,10 +19,14 @@
     content:"";
     position:absolute; inset:0;
     background-image:
-      linear-gradient(180deg, rgba(24,26,17,0.12) 0%, rgba(24,26,17,0.32) 55%, rgba(20,22,14,0.9) 100%),
-      url('https://www.amalgatrentino.com/wp-content/uploads/2026/06/testata_Amalga_2-1024x488.jpg');
-    background-size:cover; background-position:center 0%; z-index:0;
+      linear-gradient(180deg, rgba(24,26,17,0.12) 0%, rgba(24,26,17,0.32) 55%, rgba(20,22,14,0.9) 100%);
+    z-index:0;
   }
+  .home-hero .hero-img{
+    position:absolute; inset:0; background-size:cover; background-position:center;
+    opacity:0; transition:opacity 1.2s ease; z-index:-1;
+  }
+  .home-hero .hero-img.attiva{opacity:1;}
   .home-hero-content{
     position:relative; z-index:1; padding:0 28px 70px; max-width:var(--max);
     margin:0 auto; width:100%;
@@ -62,10 +66,20 @@
 </nav>
 
 <header class="home-hero">
+  <div class="hero-img attiva" style="background-image:url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-el-malget-2026-9-1024x650.jpg')"></div>
+  <div class="hero-img" style="background-image:url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/amalga-bordolona-2026.jpg')"></div>
+  <div class="hero-img" style="background-image:url('https://www.amalgatrentino.com/wp-content/uploads/2026/07/Bordolona-Alta-1024x650.jpg')"></div>
   <div class="home-hero-content">
     <span class="eyebrow on-dark">Val di Non · Trentino</span>
     <h1>Tre malghe, tre quote, un'unica famiglia.</h1>
     <p class="sub">AMALGA è il filo bianco di latte che unisce il gregge e il lavoro del casaro con l'accoglienza autentica della montagna trentina.</p>
+    <div class="altscale" id="homeAltscale">
+      <div class="seg current"><span class="dot"></span>El Malget</div>
+      <div class="rule"></div>
+      <div class="seg"><span class="dot"></span>1.800 m — Bordolona</div>
+      <div class="rule"></div>
+      <div class="seg"><span class="dot"></span>2.000 m — Bordolona Alta</div>
+    </div>
     <div class="actions">
       <a href="prenotazioni.html" class="cta">Prenota il tuo soggiorno</a>
       <a href="#malghe" class="cta ghost">Scopri le tre malghe</a>
