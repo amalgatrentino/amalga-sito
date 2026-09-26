@@ -1,6 +1,19 @@
 (function () {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+  // Se la pagina si carica con un'ancora già nell'URL (link cross-pagina,
+  // es. prenotazioni.html#el-malget), il salto nativo del browser avviene
+  // subito, prima che GSAP applichi lo stato iniziale delle sezioni
+  // .gsap-reveal (opacity:0, translateY(30)): il layout su cui il browser
+  // calcola lo scroll non è ancora quello definitivo e la destinazione
+  // atterra sotto la nav sticky. Annulliamo il salto nativo e lo rifacciamo
+  // più sotto con Lenis, a layout ormai stabile.
+  const hashInUrl = window.location.hash;
+  if (hashInUrl.length > 1) {
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  }
+
   gsap.registerPlugin(ScrollTrigger);
 
   const lenis = new Lenis({ duration: 1.2, smoothWheel: true, autoRaf: false });
@@ -45,6 +58,21 @@
         scrollTrigger: { trigger: sezione, start: "top 85%", toggleActions: "play none none none" }
       });
     });
+
+  // Ancora già presente nell'URL al caricamento (navigazione cross-pagina,
+  // vedi commento in cima al file): rifacciamo il salto con Lenis usando
+  // la stessa posizione naturale (offsetTop) dei click same-page, ora che
+  // gli ScrollTrigger sono stati creati e il layout è stabile.
+  if (hashInUrl.length > 1) {
+    const target = document.querySelector(hashInUrl);
+    if (target) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          lenis.scrollTo(cimaNaturale(target) - 74);
+        });
+      });
+    }
+  }
 
   // Ricalcola i trigger quando le immagini finiscono di caricare
   // (stesso accorgimento di Viaggioperdue, con debounce)

@@ -65,6 +65,10 @@ section[id], #galleria{
   scroll-margin-top:74px;
 }
 
+.book-card{
+  scroll-margin-top:74px;
+}
+
 .page-jumps{
   display:flex; align-items:center; gap:10px;
   background:var(--cream-2);
