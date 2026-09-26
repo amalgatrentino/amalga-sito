@@ -248,11 +248,17 @@ section[id], #galleria{
 .cta:hover{background:#E8B75A; transform:translateY(-2px);}
 .cta.ghost{
   background:transparent; color:#F6F1E6;
-  border:1px solid rgba(246,241,230,0.5); margin-left:12px;
+  border:1px solid rgba(246,241,230,0.5);
 }
 .cta.ghost:hover{border-color:#F6F1E6; background:rgba(246,241,230,0.08);}
 .cta.dark{background:var(--pine-deep); color:#F6F1E6;}
 .cta.dark:hover{background:var(--pine);}
+
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
 
 /* ---------- FEATURE ROWS (image + text alternating) ---------- */
 .feature-row{
