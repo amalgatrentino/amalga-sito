@@ -361,6 +361,10 @@ section[id], #galleria{
 .info-block a.cta{margin-top:14px;}
 @media(max-width:700px){.info-grid{grid-template-columns:1fr;}}
 
+.contact-photo{
+  width:72px; height:72px; border-radius:50%; object-fit:cover; flex:none;
+}
+
 /* ---------- PERSONA GRID (chi siamo) ---------- */
 .persone-grid{
   margin-top:56px; display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line);
