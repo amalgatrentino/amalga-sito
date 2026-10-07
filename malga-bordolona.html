@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .page-hero{ --hero-img: url('images/malghe/bordolona-hero.jpg'); }
+
+  .strip-2{grid-template-columns:1fr 1fr;}
+  .strip-2 img{height:520px;}
+  @media(max-width:760px){.strip-2{grid-template-columns:1fr 1fr;} .strip-2 img{height:300px;}}
 </style>
 </head>
 <body>
@@ -88,6 +92,13 @@
     <p>Le mucche pascolano libere sui prati d'alta quota e si nutrono dell'erba che cresce spontanea ai piedi delle Maddalene. Un latte autentico, non trattato, ricco di tutto ciò che la montagna sa dare.</p>
   </div>
 </section>
+
+<div class="wrap gsap-reveal">
+  <div class="strip strip-2">
+    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1200,c_limit,q_auto,f_auto/v1791306914/IMG_6940.jpg" alt="Il pascolo di Malga Bordolona all'alba" loading="lazy" style="object-position:center 55%;">
+    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1200,c_limit,q_auto,f_auto/v1791306914/IMG_6413.jpg" alt="Un cavallo al tramonto a Malga Bordolona" loading="lazy" style="object-position:center 40%;">
+  </div>
+</div>
 
 <section class="section dark gsap-reveal" id="dove-siamo-bordolona">
   <div class="wrap">
