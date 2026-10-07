@@ -91,6 +91,7 @@
   <a href="#intro">Il pensiero</a>
   <a href="#malghe">Le tre malghe</a>
   <a href="#filiera">Dal pascolo alla tavola</a>
+  <a href="#fattore">Fattore per un giorno</a>
   <a href="#galleria">Galleria</a>
   <a href="#chi-siamo-anteprima">Chi siamo</a>
   <a href="#prenota">Prenota</a>
@@ -173,6 +174,22 @@
     <img src="images/persone/famiglia-legna.jpg" alt="La famiglia di AMALGA">
   </div>
 </div>
+
+<!-- FATTORE PER UN GIORNO -->
+<section class="section dark gsap-reveal" id="fattore">
+  <div class="wrap feature-row" style="padding:0;">
+    <div class="img" style="background-image:url('https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2707.jpg'); background-position:center 25%; border-radius:2px;"></div>
+    <div class="text" style="padding-right:0;">
+      <span class="eyebrow on-dark">Per le famiglie · dal 24 ottobre</span>
+      <h2>Fattore per un giorno</h2>
+      <p style="color:#C6C2AC;">Il sabato mattina e la domenica pomeriggio i bambini dai 3 ai 9 anni incontrano mucche, caprette, conigli e il cavallo Stella, e imparano facendo. Posti limitati, prenotazione entro il venerdì.</p>
+      <div class="cta-row">
+        <a href="fattore-per-un-giorno.html" class="cta">Scopri e prenota</a>
+        <a href="tel:+393381783221" class="cta ghost">Chiama</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CHI SIAMO TEASER -->
 <section class="section alt gsap-reveal" id="chi-siamo-anteprima">
@@ -460,10 +477,244 @@
     }
 
     var CAMPAIGN_START = new Date('2026-10-15T00:00:00+02:00');
-    var CAMPAIGN_END = new Date('2026-11-15T23:59:59+02:00');
+    var CAMPAIGN_END = new Date('2026-11-15T23:59:59+01:00');
 
     var now = new Date();
     if (now >= CAMPAIGN_START && now <= CAMPAIGN_END && !localStorage.getItem(STORAGE_KEY)) {
+      window.__popupClaimed = 'natale';
+      setTimeout(openPopup, 2500);
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePopup();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePopup();
+    });
+  })();
+</script>
+
+<!-- POP-UP FATTORE PER UN GIORNO — attivo dall'8 ottobre 2026, data di fine provvisoria (stagione senza fine ancora fissata), una sola volta per visitatore. Se il pop-up natalizio è idoneo in questa visita, ha la precedenza e questo non si apre. -->
+<style>
+  #fattoria-popup-root {
+    --radius: 20px;
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  #fattoria-popup-root * { box-sizing: border-box; }
+
+  #fattoria-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 42, 34, 0.45);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 9998;
+  }
+  #fattoria-popup-overlay.is-open { opacity: 1; visibility: visible; }
+
+  #fattoria-popup-card {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 420px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--cream);
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: 0 -10px 40px rgba(43, 42, 34, 0.25);
+    z-index: 9999;
+    transition: transform 0.45s cubic-bezier(.2,.9,.25,1);
+  }
+  #fattoria-popup-overlay.is-open #fattoria-popup-card { transform: translate(-50%, 0); }
+
+  @media (min-width: 640px) {
+    #fattoria-popup-card {
+      bottom: 50%;
+      transform: translate(-50%, 60%);
+      opacity: 0;
+      border-radius: var(--radius);
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    #fattoria-popup-overlay.is-open #fattoria-popup-card {
+      transform: translate(-50%, 50%);
+      opacity: 1;
+    }
+  }
+
+  #fattoria-popup-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(43, 42, 34, 0.08);
+    color: var(--pine-deep);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  #fattoria-popup-close:hover { background: rgba(43, 42, 34, 0.16); }
+
+  .fattoria-popup-hero {
+    position: relative;
+    padding: 30px 28px 18px;
+    overflow: hidden;
+  }
+  .fattoria-popup-hero svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: auto; opacity: 0.9; }
+
+  .fattoria-popup-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .fattoria-popup-title {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0 0 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fattoria-popup-meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--clay);
+    margin: 0 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fattoria-popup-teaser {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fattoria-popup-info {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    border-top: 1px solid rgba(43, 42, 34, 0.12);
+  }
+  .fattoria-popup-info li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(43, 42, 34, 0.12);
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .fattoria-popup-info strong {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--clay);
+    flex: 0 0 auto;
+  }
+
+  .fattoria-popup-body { padding: 0 28px 28px; }
+
+  .fattoria-popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .fattoria-popup-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    padding: 13px 20px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background 0.2s ease;
+  }
+  .fattoria-popup-btn-primary { background: var(--pine-deep); color: var(--cream); }
+  .fattoria-popup-btn-primary:hover { opacity: 0.88; }
+  .fattoria-popup-btn-ghost { background: transparent; color: var(--ink); border-color: rgba(43, 42, 34, 0.25); }
+  .fattoria-popup-btn-ghost:hover { background: rgba(43, 42, 34, 0.06); }
+</style>
+
+<div id="fattoria-popup-root">
+  <div id="fattoria-popup-overlay">
+    <div id="fattoria-popup-card" role="dialog" aria-modal="true" aria-labelledby="fattoria-popup-title">
+      <button id="fattoria-popup-close" aria-label="Chiudi">&times;</button>
+
+      <div class="fattoria-popup-hero">
+        <p class="fattoria-popup-eyebrow">Dal 24 ottobre · nel fine settimana</p>
+        <h2 id="fattoria-popup-title" class="fattoria-popup-title">Fattore per un giorno</h2>
+        <p class="fattoria-popup-meta">Per bambini dai 3 ai 9 anni · El Malget</p>
+        <p class="fattoria-popup-teaser">Mucche, caprette, conigli e il cavallo Stella: una mattina o un pomeriggio in fattoria, con laboratori semplici e pratici. Posti limitati, massimo 8 bambini per attività; si prenota entro il venerdì.</p>
+
+        <svg viewBox="0 0 400 40" preserveAspectRatio="none">
+          <path d="M0,40 L0,26 L60,10 L110,28 L170,4 L230,24 L290,12 L340,30 L400,18 L400,40 Z" fill="#D6A23F" opacity="0.25"/>
+        </svg>
+      </div>
+
+      <div class="fattoria-popup-body">
+        <ul class="fattoria-popup-info">
+          <li><span>Sabato</span><strong>10:30–12:30</strong></li>
+          <li><span>Domenica</span><strong>14:30–16:30</strong></li>
+          <li><span>Costo</span><strong>€ 15 a bambino</strong></li>
+        </ul>
+
+        <div class="fattoria-popup-actions">
+          <a class="fattoria-popup-btn fattoria-popup-btn-primary" href="fattore-per-un-giorno.html#prenota">Scopri e prenota</a>
+          <a class="fattoria-popup-btn fattoria-popup-btn-ghost" href="tel:+393381783221">Chiama</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('fattoria-popup-overlay');
+    var closeBtn = document.getElementById('fattoria-popup-close');
+
+    var STORAGE_KEY = 'fattoria-popup-seen';
+
+    function openPopup() { overlay.classList.add('is-open'); }
+    function closePopup() {
+      overlay.classList.remove('is-open');
+      localStorage.setItem(STORAGE_KEY, '1');
+    }
+
+    // Data di fine provvisoria: la stagione non ha ancora una fine fissata.
+    // Aggiornare FATTORIA_END quando la famiglia deciderà la chiusura stagionale.
+    var FATTORIA_START = new Date('2026-10-08T00:00:00+02:00');
+    var FATTORIA_END = new Date('2026-12-31T23:59:59+01:00');
+
+    var now = new Date();
+    if (now >= FATTORIA_START && now <= FATTORIA_END && !localStorage.getItem(STORAGE_KEY) && !window.__popupClaimed) {
       setTimeout(openPopup, 2500);
     }
 
