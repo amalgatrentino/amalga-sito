@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .page-hero{ --hero-img: url('images/malghe/el-malget-hero.jpg'); }
+
+  .lago-strip{width:100%; height:360px; object-fit:cover; object-position:center 60%;}
+  @media(max-width:760px){.lago-strip{height:220px;}}
 </style>
 </head>
 <body>
@@ -72,6 +75,10 @@
     </div>
   </div>
 </section>
+
+<div class="wrap gsap-reveal">
+  <img class="lago-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1790146401/IMG_2599.jpg" alt="Il lago di Tovel con le montagne riflesse nell'acqua" loading="lazy">
+</div>
 
 <section class="feature-row gsap-reveal" id="tavola">
   <div class="img" style="background-image:url('images/cucina/piatto-tortelloni.jpg')"></div>
