@@ -69,6 +69,55 @@
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           lenis.scrollTo(cimaNaturale(target) - 74);
+
+          // Seconda correzione quando i font web sono pronti: il primo
+          // tentativo (due rAF sopra) può avvenire prima che i Google Fonts
+          // sostituiscano il fallback. Su pagine con sezioni dense di testo
+          // sopra l'ancora (es. la griglia .rooms di Bordolona Alta), il
+          // cambio di font altera l'altezza del contenuto e sposta
+          // l'ancora già raggiunta. Non si applica se il visitatore ha già
+          // scorso di sua iniziativa nel frattempo, né se la posizione è
+          // già corretta.
+          if (document.fonts && document.fonts.ready) {
+            var userInteracted = false;
+            var timedOut = false;
+            var markInteracted = function () { userInteracted = true; };
+            var inputEvents = ["wheel", "touchstart", "keydown"];
+            inputEvents.forEach(function (evt) {
+              window.addEventListener(evt, markInteracted, { passive: true });
+            });
+            // "scroll" viene ascoltato con un piccolo ritardo, per non
+            // intercettare lo scroll animato della correzione appena avviata
+            // (Lenis ha duration 1.2s) come se fosse un'interazione.
+            var scrollListenerTimer = setTimeout(function () {
+              window.addEventListener("scroll", markInteracted, { passive: true });
+            }, 1400);
+
+            var removeInteractionListeners = function () {
+              clearTimeout(scrollListenerTimer);
+              inputEvents.forEach(function (evt) {
+                window.removeEventListener(evt, markInteracted, { passive: true });
+              });
+              window.removeEventListener("scroll", markInteracted, { passive: true });
+            };
+
+            var fontsTimeoutTimer = setTimeout(function () {
+              timedOut = true;
+              removeInteractionListeners();
+            }, 5000);
+
+            document.fonts.ready.then(function () {
+              clearTimeout(fontsTimeoutTimer);
+              removeInteractionListeners();
+              if (timedOut) return;
+              if (window.location.hash !== hashInUrl) return;
+              if (userInteracted) return;
+              var currentTop = target.getBoundingClientRect().top;
+              if (Math.abs(currentTop - 74) > 4) {
+                lenis.scrollTo(cimaNaturale(target) - 74, { immediate: true });
+              }
+            });
+          }
         });
       });
     }
