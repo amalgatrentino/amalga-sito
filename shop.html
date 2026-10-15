@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shop · AMALGA</title>
-<meta name="description" content="I formaggi del caseificio di Malga Bordolona: come nascono, dove trovarli allo spaccio in malga, e a breve anche qui online.">
+<meta name="description" content="I formaggi di AMALGA: scegli, scrivici l'ordine e ritira in malga.">
 <link rel="canonical" href="https://amalgatrentino.com/shop.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,26 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .page-hero{ --hero-img: url('images/malghe/bordolona-spaccio.jpg'); min-height:50vh; }
+
+  .product-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line);
+    margin-top:40px;
+  }
+  .product-card{background:var(--cream); padding:28px 26px; display:flex; flex-direction:column;}
+  .product-card img{width:100%; height:380px; object-fit:cover; border-radius:2px; margin-bottom:16px;}
+  .product-card h3{font-size:1.2rem; color:var(--pine-deep);}
+  .product-card .price{margin-top:8px; font-family:'Fraunces', serif; font-size:1.15rem; color:var(--pine-deep);}
+  .product-card .cta-row{margin-top:20px;}
+
+  .shop-note{
+    background:var(--cream-2); border:1px solid var(--line); border-radius:2px;
+    padding:16px 20px; margin-top:28px; font-size:0.88rem; color:#6b6552; max-width:640px;
+  }
+
+  @media(max-width:760px){
+    .product-grid{grid-template-columns:1fr;}
+    .product-card img{height:300px;}
+  }
 </style>
 </head>
 <body>
@@ -36,43 +56,87 @@
   <div class="page-hero-content">
     <span class="eyebrow on-dark">Lo spaccio di Malga Bordolona</span>
     <h1>Shop</h1>
-    <p class="sub">I formaggi che ogni mattina nascono nel caseificio di Malga Bordolona. L'acquisto online è in arrivo: nel frattempo trovate tutto allo spaccio in malga.</p>
+    <p class="sub">I formaggi di AMALGA. Si ordina da qui con un messaggio; pagamento e ritiro sono in malga.</p>
   </div>
 </header>
 
 <nav class="page-jumps" aria-label="Sezioni della pagina">
-  <a href="#prodotti">Shop online</a>
+  <a href="#prodotti">I prodotti</a>
   <a href="#come-funziona">Come funziona</a>
 </nav>
 
 <section class="section gsap-reveal" id="prodotti">
-  <div class="wrap" style="text-align:center;">
-    <span class="eyebrow">Shop online</span>
-    <h2 style="margin-left:auto; margin-right:auto;">Presto online</h2>
-    <p class="lede" style="margin-left:auto; margin-right:auto;">Stiamo preparando lo shop per l'acquisto diretto dei nostri formaggi. Nel frattempo, potete trovarli allo spaccio in malga, o scriverci per informazioni.</p>
-    <a href="mailto:info@amalgatrentino.com?subject=Richiesta%20informazioni%20prodotti" class="cta" style="margin-top:20px;">Scrivici</a>
+  <div class="wrap">
+    <span class="eyebrow">I prodotti</span>
+    <h2>I nostri formaggi</h2>
+    <p class="lede">Scegli, scrivici cosa vuoi e ti confermiamo la disponibilità. Si paga e si ritira in malga.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg" alt="La cagliata nel paiolo di rame" loading="lazy">
+        <h3>Caciotta de El Malget</h3>
+        <p class="price">12 € al chilo</p>
+        <div class="cta-row">
+          <a href="https://wa.me/393483695792?text=Buongiorno%2C%20vorrei%20ordinare%3A%20Caciotta%20de%20El%20Malget%20%2812%20%E2%82%AC%20al%20chilo%29.%20Quantit%C3%A0%20in%20kg%3A%20___.%20Ritiro%20in%20malga." class="cta">Ordina su WhatsApp</a>
+          <a href="mailto:info@amalgatrentino.com?subject=Ordine%20formaggi&body=Nome%20e%20cognome%3A%20...%20Prodotto%3A%20Caciotta%20de%20El%20Malget.%20Quantit%C3%A0%20in%20kg%3A%20...%20Ritiro%20in%20malga." class="cta dark">Scrivi</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306913/IMG_6633.jpg" alt="Le fascere con la cagliata fresca" loading="lazy">
+        <h3>Nostrano fresco di Malga Bordolona</h3>
+        <p class="price">14 € al chilo</p>
+        <div class="cta-row">
+          <a href="https://wa.me/393483695792?text=Buongiorno%2C%20vorrei%20ordinare%3A%20Nostrano%20fresco%20di%20Malga%20Bordolona%20%2814%20%E2%82%AC%20al%20chilo%29.%20Quantit%C3%A0%20in%20kg%3A%20___.%20Ritiro%20in%20malga." class="cta">Ordina su WhatsApp</a>
+          <a href="mailto:info@amalgatrentino.com?subject=Ordine%20formaggi&body=Nome%20e%20cognome%3A%20...%20Prodotto%3A%20Nostrano%20fresco%20di%20Malga%20Bordolona.%20Quantit%C3%A0%20in%20kg%3A%20...%20Ritiro%20in%20malga." class="cta dark">Scrivi</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306914/IMG_6868.jpg" alt="La cantina di stagionatura dei formaggi" loading="lazy">
+        <h3>Eroico stagionato di Malga Bordolona</h3>
+        <p class="price">18 € al chilo</p>
+        <div class="cta-row">
+          <a href="https://wa.me/393483695792?text=Buongiorno%2C%20vorrei%20ordinare%3A%20Eroico%20stagionato%20di%20Malga%20Bordolona%20%2818%20%E2%82%AC%20al%20chilo%29.%20Quantit%C3%A0%20in%20kg%3A%20___.%20Ritiro%20in%20malga." class="cta">Ordina su WhatsApp</a>
+          <a href="mailto:info@amalgatrentino.com?subject=Ordine%20formaggi&body=Nome%20e%20cognome%3A%20...%20Prodotto%3A%20Eroico%20stagionato%20di%20Malga%20Bordolona.%20Quantit%C3%A0%20in%20kg%3A%20...%20Ritiro%20in%20malga." class="cta dark">Scrivi</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:28px; color:#544f3f;">Si ritira in malga. Giorno e orario si concordano nel messaggio di conferma.</p>
+    <p style="margin-top:10px; font-size:0.8rem; color:#544f3f;">I nostri formaggi sono prodotti a latte crudo: se ne sconsiglia il consumo a bambini, donne in gravidanza e persone anziane.</p>
+
+    <p class="shop-note" id="sconto-natale" hidden>Fino al 15 novembre, 10% di sconto sui formaggi.</p>
+    <script>
+      (function () {
+        var inizio = new Date('2026-10-15T00:00:00+02:00');
+        var fine = new Date('2026-11-15T23:59:59+01:00');
+        var ora = new Date();
+        if (ora >= inizio && ora <= fine) {
+          document.getElementById('sconto-natale').hidden = false;
+        }
+      })();
+    </script>
   </div>
 </section>
 
 <section class="section dark gsap-reveal" id="come-funziona">
   <div class="wrap">
     <span class="eyebrow on-dark">Come funziona</span>
-    <h2>Dal caseificio a casa tua</h2>
+    <h2>Dal caseificio a te</h2>
     <div class="trio">
       <div class="trio-item">
         <span class="num" style="font-family:'Space Mono', monospace; font-size:12px; color:var(--butter);">01</span>
-        <h3>Scegli i prodotti</h3>
-        <p>Aggiungi al carrello i formaggi e i derivati che vuoi ricevere, con le quantità che preferisci.</p>
+        <h3>Scegli il formaggio</h3>
+        <p>Scegli il formaggio e la quantità in chili tra i tre formaggi disponibili.</p>
       </div>
       <div class="trio-item">
         <span class="num" style="font-family:'Space Mono', monospace; font-size:12px; color:var(--butter);">02</span>
-        <h3>Invia la richiesta</h3>
-        <p>Ti scriviamo noi per confermare disponibilità, costi di spedizione e modalità di pagamento.</p>
+        <h3>Scrivici</h3>
+        <p>Mandaci un messaggio su WhatsApp o via email con il prodotto scelto: ti confermiamo la disponibilità.</p>
       </div>
       <div class="trio-item">
         <span class="num" style="font-family:'Space Mono', monospace; font-size:12px; color:var(--butter);">03</span>
-        <h3>Ritiro o spedizione</h3>
-        <p>Puoi ritirare allo spaccio di Malga Bordolona oppure ricevere i prodotti direttamente a casa.</p>
+        <h3>Ritira in malga</h3>
+        <p>Il pagamento e il ritiro avvengono in malga, nel giorno e nell'orario concordati nel messaggio di conferma.</p>
       </div>
     </div>
   </div>
