@@ -114,6 +114,34 @@ document.addEventListener("DOMContentLoaded", function () {
   elementi.forEach(function (el) { io.observe(el); });
 })();
 
+// <img> differite (stesso osservatore, stesso margine 300px): per le
+// pagine delle malghe dove serve più controllo di quanto dia il
+// loading="lazy" nativo. src parte da un segnaposto trasparente;
+// data-src/data-srcset/data-sizes vengono applicati solo quando la foto
+// si avvicina alla finestra visibile.
+(function () {
+  const elementi = document.querySelectorAll("img[data-src]");
+  if (!elementi.length) return;
+  function applica(img) {
+    if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+    if (img.dataset.sizes) img.sizes = img.dataset.sizes;
+    if (img.dataset.src) img.src = img.dataset.src;
+  }
+  if (!("IntersectionObserver" in window)) {
+    elementi.forEach(applica);
+    return;
+  }
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        applica(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "300px" });
+  elementi.forEach(function (img) { io.observe(img); });
+})();
+
 // Mobile nav toggle
 (function(){
   var btn = document.querySelector('.nav-toggle');

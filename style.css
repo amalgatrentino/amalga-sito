@@ -412,3 +412,10 @@ section[id], #galleria{
   font-family:'Space Mono', monospace; font-size:10.5px; letter-spacing:0.05em; color:#8C8874;
 }
 @media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr; row-gap:36px;}}
+
+/* Nasconde il segnaposto trasparente delle <img> differite solo quando
+   JavaScript non è disponibile, lasciando spazio alla foto reale del
+   <noscript>. Con JavaScript attivo il segnaposto resta nel flusso: deve
+   avere una propria area visibile perché l'IntersectionObserver possa
+   rilevarne l'avvicinamento alla finestra. */
+.no-js img[src^="data:image/gif;base64"]{display:none;}
