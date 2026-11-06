@@ -9,9 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/malghe/el-malget-hero-m.jpg" fetchpriority="high" media="(max-width: 800px)">
+<link rel="preload" as="image" href="images/malghe/el-malget-hero-d.jpg" fetchpriority="high" media="(min-width: 801px)">
 <link rel="stylesheet" href="style.css">
 <style>
-  .page-hero{ --hero-img: url('images/malghe/el-malget-hero.jpg'); }
+  .page-hero{ --hero-img: url('images/malghe/el-malget-hero-m.jpg'); }
+  @media(min-width:801px){
+    .page-hero{ --hero-img: url('images/malghe/el-malget-hero-d.jpg'); }
+  }
 
   .lago-strip{width:100%; height:360px; object-fit:cover; object-position:center 60%;}
   @media(max-width:760px){.lago-strip{height:220px;}}
@@ -24,7 +29,7 @@
 
 <nav class="site-nav">
   <div class="bar">
-    <a href="index.html" class="wordmark"><img src="amalga-logo-pine.png" alt="AMALGA" class="logo-img"></a>
+    <a href="index.html" class="wordmark"><img src="amalga-logo-pine-s.png" alt="AMALGA" class="logo-img" width="303" height="72"></a>
     <button class="nav-toggle" aria-expanded="false">Menu</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -82,11 +87,11 @@
 </section>
 
 <div class="wrap gsap-reveal">
-  <img class="lago-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1790146401/IMG_2599.jpg" alt="Il lago di Tovel con le montagne riflesse nell'acqua" loading="lazy">
+  <img class="lago-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1790146401/IMG_2599.jpg" alt="Il lago di Tovel con le montagne riflesse nell'acqua" width="1600" height="1200" loading="lazy">
 </div>
 
 <section class="feature-row gsap-reveal" id="tavola">
-  <div class="img" style="background-image:url('images/cucina/piatto-tortelloni.jpg')"></div>
+  <div class="img" data-bg-lazy="images/cucina/piatto-tortelloni.jpg"></div>
   <div class="text">
     <span class="eyebrow">A tavola</span>
     <h2>Cucina di malga, tutti i giorni</h2>
@@ -109,7 +114,7 @@
 </section>
 
 <section class="feature-row reverse gsap-reveal" id="fattoria">
-  <div class="img" style="background-image:url('images/malghe/bordolona-alta-mucca-ritratto.jpg')"></div>
+  <div class="img" data-bg-lazy="images/malghe/bordolona-alta-mucca-ritratto.jpg"></div>
   <div class="text">
     <span class="eyebrow">Fattoria didattica</span>
     <h2>Un luogo pensato anche per i più piccoli</h2>
@@ -121,8 +126,8 @@
 </section>
 
 <div class="wrap gsap-reveal">
-  <img class="lago-strip autunno-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1793729405/IMG_2938.jpg" alt="Una decina di mucche attorno a una mangiatoia, con alberi dai colori autunnali e la valle sullo sfondo" loading="lazy">
-  <img class="lago-strip autunno-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1793729405/IMG_2939.jpg" alt="Un cavallo con la cavezza azzurra in un recinto, con staccionata, stalla e boschi autunnali sullo sfondo" loading="lazy">
+  <img class="lago-strip autunno-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1793729405/IMG_2938.jpg" alt="Una decina di mucche attorno a una mangiatoia, con alberi dai colori autunnali e la valle sullo sfondo" width="1600" height="739" loading="lazy">
+  <img class="lago-strip autunno-strip" src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1793729405/IMG_2939.jpg" alt="Un cavallo con la cavezza azzurra in un recinto, con staccionata, stalla e boschi autunnali sullo sfondo" width="1600" height="739" loading="lazy">
   <p class="img-caption">El Malget in autunno</p>
 </div>
 
@@ -157,7 +162,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="amalga-logo-cream.png" alt="AMALGA" class="footer-logo-img">
+        <img src="amalga-logo-cream-s.png" alt="AMALGA" class="footer-logo-img" width="381" height="90" loading="lazy" decoding="async">
         <p class="footer-tagline">Tre malghe, tre quote, un'unica famiglia. Val di Non, Trentino.</p>
         <p class="footer-address">Azienda Agricola dell'Alpe S.S. — Via di Campo 24 - 38019 Ville d'Anaunia (TN)</p>
         <p class="footer-address">C.F. e P.IVA 02601030220</p>

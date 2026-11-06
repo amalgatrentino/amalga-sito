@@ -9,10 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/malghe/dettaglio-campanacci-m.jpg" fetchpriority="high" media="(max-width: 800px)">
+<link rel="preload" as="image" href="images/malghe/dettaglio-campanacci-d.jpg" fetchpriority="high" media="(min-width: 801px)">
 <link rel="stylesheet" href="style.css">
 <style>
   .page-hero{
-    --hero-img: url('images/malghe/dettaglio-campanacci.jpg');
+    --hero-img: url('images/malghe/dettaglio-campanacci-m.jpg');
+  }
+  @media(min-width:801px){
+    .page-hero{ --hero-img: url('images/malghe/dettaglio-campanacci-d.jpg'); }
   }
 
   .strip-4{grid-template-columns:repeat(4,1fr);}
@@ -42,7 +47,7 @@
 
 <nav class="site-nav">
   <div class="bar">
-    <a href="index.html" class="wordmark"><img src="amalga-logo-pine.png" alt="AMALGA" class="logo-img"></a>
+    <a href="index.html" class="wordmark"><img src="amalga-logo-pine-s.png" alt="AMALGA" class="logo-img" width="303" height="72"></a>
     <button class="nav-toggle" aria-expanded="false">Menu</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -86,10 +91,10 @@
 
 <div class="wrap gsap-reveal">
   <div class="strip strip-4" style="margin:0; padding:96px 0;">
-    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2703.jpg" alt="Coniglietti della fattoria di El Malget" loading="lazy">
-    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2704.jpg" alt="Gatti della fattoria di El Malget" loading="lazy">
-    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2705.jpg" alt="Una mucca di El Malget" loading="lazy">
-    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2706.jpg" alt="Caprette della fattoria di El Malget" loading="lazy">
+    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2703.jpg" alt="Coniglietti della fattoria di El Malget" width="1153" height="1153" loading="lazy" decoding="async">
+    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2704.jpg" alt="Gatti della fattoria di El Malget" width="640" height="640" loading="lazy" decoding="async">
+    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2705.jpg" alt="Una mucca di El Malget" width="1153" height="1153" loading="lazy" decoding="async">
+    <img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1600,c_limit,q_auto,f_auto/v1791309128/IMG_2706.jpg" alt="Caprette della fattoria di El Malget" width="1374" height="1374" loading="lazy" decoding="async">
   </div>
 </div>
 
@@ -200,7 +205,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="amalga-logo-cream.png" alt="AMALGA" class="footer-logo-img">
+        <img src="amalga-logo-cream-s.png" alt="AMALGA" class="footer-logo-img" width="381" height="90" loading="lazy" decoding="async">
         <p class="footer-tagline">Tre malghe, tre quote, un'unica famiglia. Val di Non, Trentino.</p>
         <p class="footer-address">Azienda Agricola dell'Alpe S.S. — Via di Campo 24 - 38019 Ville d'Anaunia (TN)</p>
         <p class="footer-address">C.F. e P.IVA 02601030220</p>
