@@ -16,6 +16,19 @@
   }
 })();
 
+// Sceglie la variante -m (700/1000px, per schermi fino a 800px) o -d
+// (1600px) di una foto locale, alla stessa soglia usata nel CSS/preload
+// dell'hero. Gli URL esterni (Cloudinary) restano invariati. Se per il
+// file non esiste una -d (solo le tre foto hero ce l'hanno), su schermi
+// larghi resta l'originale.
+function scegliVariante(path) {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+  const mobile = window.matchMedia("(max-width: 800px)").matches;
+  if (mobile) return path.replace(/\.jpg$/i, "-m.jpg");
+  const haVarianteD = /\/(el-malget-hero|bordolona-hero|bordolona-alta-hero)\.jpg$/i.test(path);
+  return haVarianteD ? path.replace(/\.jpg$/i, "-d.jpg") : path;
+}
+
 // Home hero carousel: la prima foto è già nel markup (caricamento
 // immediato, è l'LCP); le altre due arrivano via data-bg e vengono
 // richieste solo dopo l'evento "load", per non competere con l'LCP sulla
@@ -50,13 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function precaricaEAvvia() {
     Promise.all(daPrecaricare.map(function (el) {
       return new Promise(function (resolve) {
+        const src = scegliVariante(el.dataset.bg);
         const img = new Image();
         img.onload = function () {
-          el.style.backgroundImage = "url('" + el.dataset.bg + "')";
+          el.style.backgroundImage = "url('" + src + "')";
           if (img.decode) { img.decode().then(resolve).catch(resolve); } else { resolve(); }
         };
         img.onerror = resolve;
-        img.src = el.dataset.bg;
+        img.src = src;
       });
     })).then(avviaCarosello);
   }
@@ -83,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const elementi = document.querySelectorAll("[data-bg-lazy]");
   if (!elementi.length) return;
   function applica(el) {
-    if (el.dataset.bgLazy) el.style.backgroundImage = "url('" + el.dataset.bgLazy + "')";
+    if (el.dataset.bgLazy) el.style.backgroundImage = "url('" + scegliVariante(el.dataset.bgLazy) + "')";
   }
   if (!("IntersectionObserver" in window)) {
     elementi.forEach(applica);

@@ -8,7 +8,8 @@
 <link rel="canonical" href="https://amalgatrentino.com/index.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="images/malghe/el-malget-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/malghe/el-malget-hero-m.jpg" fetchpriority="high" media="(max-width: 800px)">
+<link rel="preload" as="image" href="images/malghe/el-malget-hero-d.jpg" fetchpriority="high" media="(min-width: 801px)">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
@@ -27,6 +28,10 @@
   .home-hero .hero-img{
     position:absolute; inset:0; background-size:cover; background-position:center;
     opacity:0; transition:opacity 1.2s ease; z-index:-1;
+  }
+  .home-hero .hero-img.hero-el-malget{ background-image:url('images/malghe/el-malget-hero-m.jpg'); }
+  @media(min-width:801px){
+    .home-hero .hero-img.hero-el-malget{ background-image:url('images/malghe/el-malget-hero-d.jpg'); }
   }
   .home-hero .hero-img.attiva{opacity:1;}
   .home-hero-content{
@@ -68,7 +73,7 @@
 </nav>
 
 <header class="home-hero">
-  <div class="hero-img attiva" style="background-image:url('images/malghe/el-malget-hero.jpg')"></div>
+  <div class="hero-img attiva hero-el-malget"></div>
   <div class="hero-img" data-bg="images/malghe/bordolona-hero.jpg"></div>
   <div class="hero-img" data-bg="images/malghe/bordolona-alta-hero.jpg"></div>
   <div class="home-hero-content">
@@ -150,12 +155,12 @@
     <h2>Dal pascolo alla tavola, senza scorciatoie</h2>
     <div class="trio">
       <div class="trio-item">
-        <img src="images/caseificio/ritratto-casaro.jpg" alt="Il casaro al lavoro nel caseificio" width="1600" height="1068" loading="lazy" decoding="async" style="object-position:center 25%;">
+        <img src="images/caseificio/ritratto-casaro.jpg" srcset="images/caseificio/ritratto-casaro-m.jpg 700w, images/caseificio/ritratto-casaro.jpg 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Il casaro al lavoro nel caseificio" width="1600" height="1068" loading="lazy" decoding="async" style="object-position:center 25%;">
         <h3>Il caseificio</h3>
         <p>Ogni mattina il latte appena munto diventa l'Eroico, il nostro stagionato, il Casolet fresco, la ricotta, il burro, lo yogurt e la panna. Formaggi che raccontano l'erba dei nostri pascoli e l'aria delle Maddalene.</p>
       </div>
       <div class="trio-item">
-        <img src="images/cucina/piatto-canederli.jpg" alt="Canederli della cucina di montagna AMALGA" width="1600" height="1066" loading="lazy" decoding="async">
+        <img src="images/cucina/piatto-canederli.jpg" srcset="images/cucina/piatto-canederli-m.jpg 700w, images/cucina/piatto-canederli.jpg 1600w" sizes="(max-width: 760px) 100vw, 33vw" alt="Canederli della cucina di montagna AMALGA" width="1600" height="1066" loading="lazy" decoding="async">
         <h3>La cucina di montagna</h3>
         <p>Non cerchiamo di stupire, cerchiamo di emozionare con semplicità. Polenta cotta nel paiolo di rame, canederli fatti a mano, taglieri dei nostri prodotti: ricette tramandate, sapori a chilometro zero.</p>
       </div>
@@ -171,9 +176,9 @@
 <!-- STRIP -->
 <div class="wrap gsap-reveal" id="galleria">
   <div class="strip" style="margin:0; padding:96px 0;">
-    <img src="images/cucina/piatto-amalga.jpg" alt="Piatti della cucina di malga AMALGA" width="1600" height="1064" loading="lazy" decoding="async">
-    <img src="images/malghe/bordolona-pascolo.jpg" alt="Mucche al pascolo a Malga Bordolona" width="1600" height="1066" loading="lazy" decoding="async">
-    <img src="images/persone/famiglia-legna.jpg" alt="La famiglia di AMALGA" width="1600" height="1200" loading="lazy" decoding="async">
+    <img src="images/cucina/piatto-amalga.jpg" srcset="images/cucina/piatto-amalga-m.jpg 700w, images/cucina/piatto-amalga.jpg 1600w" sizes="(max-width: 760px) 100vw, 380px" alt="Piatti della cucina di malga AMALGA" width="1600" height="1064" loading="lazy" decoding="async">
+    <img src="images/malghe/bordolona-pascolo.jpg" srcset="images/malghe/bordolona-pascolo-m.jpg 700w, images/malghe/bordolona-pascolo.jpg 1600w" sizes="(max-width: 760px) 100vw, 380px" alt="Mucche al pascolo a Malga Bordolona" width="1600" height="1066" loading="lazy" decoding="async">
+    <img src="images/persone/famiglia-legna.jpg" srcset="images/persone/famiglia-legna-m.jpg 700w, images/persone/famiglia-legna.jpg 1600w" sizes="(max-width: 760px) 100vw, 380px" alt="La famiglia di AMALGA" width="1600" height="1200" loading="lazy" decoding="async">
   </div>
 </div>
 
