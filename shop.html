@@ -20,12 +20,14 @@
   }
 
   .product-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line);
+    display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--line); border:1px solid var(--line);
     margin-top:40px;
   }
   .product-card{background:var(--cream); padding:28px 26px; display:flex; flex-direction:column;}
-  .product-card img{width:100%; height:380px; object-fit:cover; border-radius:2px; margin-bottom:16px;}
+  .product-card img{width:100%; height:380px; object-fit:cover; object-position:50% 75%; border-radius:2px; margin-bottom:16px;}
   .product-card h3{font-size:1.2rem; color:var(--pine-deep); text-wrap:balance;}
+  .product-card h3 .novita{display:inline-block; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--clay-text); margin-left:8px; vertical-align:middle;}
+  .product-card .sub{display:block; font-style:italic; font-size:0.85rem; color:#6b6552; margin-top:4px;}
   .product-card .price{margin-top:8px; font-family:'Fraunces', serif; font-size:1.15rem; color:var(--pine-deep);}
   .product-card .cta-row{margin-top:20px;}
 
@@ -79,8 +81,8 @@
 
     <div class="product-grid">
       <div class="product-card">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg 900w" data-sizes="(max-width: 760px) 100vw, 33vw" alt="La cagliata nel paiolo di rame" width="900" height="1200" decoding="async" fetchpriority="low">
-        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306915/IMG_6430.jpg 900w" sizes="(max-width: 760px) 100vw, 33vw" alt="La cagliata nel paiolo di rame" width="900" height="1200" loading="lazy"></noscript>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654251/IMG_3012.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654251/IMG_3012.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654251/IMG_3012.jpg 900w" data-sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Casolét di Malga Bordolona" width="900" height="1200" decoding="async" fetchpriority="low">
+        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654251/IMG_3012.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654251/IMG_3012.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654251/IMG_3012.jpg 900w" sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Casolét di Malga Bordolona" width="900" height="1200" loading="lazy"></noscript>
         <h3>Casolét di Malga Bordolona</h3>
         <p class="price">14 € al chilo</p>
         <div class="cta-row">
@@ -89,8 +91,8 @@
         </div>
       </div>
       <div class="product-card">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1792090159/IMG_2777.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1792090159/IMG_2777.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1792090159/IMG_2777.jpg 900w" data-sizes="(max-width: 760px) 100vw, 33vw" alt="Forme di formaggio su assi di legno in cantina" width="900" height="1200" decoding="async" fetchpriority="low">
-        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1792090159/IMG_2777.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1792090159/IMG_2777.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1792090159/IMG_2777.jpg 900w" sizes="(max-width: 760px) 100vw, 33vw" alt="Forme di formaggio su assi di legno in cantina" width="900" height="1200" loading="lazy"></noscript>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654252/IMG_3013.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654252/IMG_3013.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654252/IMG_3013.jpg 900w" data-sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Nostrano fresco di Malga Bordolona" width="900" height="1200" decoding="async" fetchpriority="low">
+        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654252/IMG_3013.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654252/IMG_3013.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654252/IMG_3013.jpg 900w" sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Nostrano fresco di Malga Bordolona" width="900" height="1200" loading="lazy"></noscript>
         <h3>Nostrano fresco di Malga Bordolona</h3>
         <p class="price">14 € al chilo</p>
         <div class="cta-row">
@@ -99,8 +101,19 @@
         </div>
       </div>
       <div class="product-card">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306914/IMG_6315.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1791306914/IMG_6315.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306914/IMG_6315.jpg 900w" data-sizes="(max-width: 760px) 100vw, 33vw" alt="Una forma di formaggio con il numero di lotto scritto a mano" width="900" height="1200" decoding="async" fetchpriority="low">
-        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306914/IMG_6315.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1791306914/IMG_6315.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1791306914/IMG_6315.jpg 900w" sizes="(max-width: 760px) 100vw, 33vw" alt="Una forma di formaggio con il numero di lotto scritto a mano" width="900" height="1200" loading="lazy"></noscript>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654254/IMG_3014.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654254/IMG_3014.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654254/IMG_3014.jpg 900w" data-sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Nostrano di Malga Bordolona con la crosta scura dell'affinatura nelle vinacce di Teroldego" width="900" height="1200" decoding="async" fetchpriority="low">
+        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654254/IMG_3014.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654254/IMG_3014.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654254/IMG_3014.jpg 900w" sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Nostrano di Malga Bordolona con la crosta scura dell'affinatura nelle vinacce di Teroldego" width="900" height="1200" loading="lazy"></noscript>
+        <h3>Nostrano di Malga Bordolona<span class="novita">Novità</span></h3>
+        <p class="sub">affinato 40 giorni nelle vinacce di Teroldego</p>
+        <p class="price">16 € al chilo</p>
+        <div class="cta-row">
+          <a href="https://wa.me/393483695792?text=Buongiorno%2C%20vorrei%20ordinare%20il%20Nostrano%20di%20Malga%20Bordolona%20affinato%2040%20giorni%20nelle%20vinacce%20di%20Teroldego.%20Peso%20in%20kg%3A%20" class="cta" aria-label="Ordina su WhatsApp: Nostrano di Malga Bordolona affinato nelle vinacce di Teroldego">Ordina su WhatsApp</a>
+          <a href="mailto:info@amalgatrentino.com?subject=Ordine%20formaggi&body=Nome%20e%20cognome%3A%20...%20Prodotto%3A%20Nostrano%20di%20Malga%20Bordolona%2C%20affinato%2040%20giorni%20nelle%20vinacce%20di%20Teroldego.%20Peso%20in%20kg%3A%20...%20Ritiro%20a%20El%20Malget." class="cta dark" aria-label="Scrivi per ordinare: Nostrano di Malga Bordolona affinato nelle vinacce di Teroldego">Scrivi</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654256/IMG_3015.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654256/IMG_3015.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654256/IMG_3015.jpg 900w" data-sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Nostrano stagionato di Malga Bordolona, con l'occhiatura ben visibile" width="900" height="1200" decoding="async" fetchpriority="low">
+        <noscript><img src="https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654256/IMG_3015.jpg" srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/w_500,c_limit,q_auto,f_auto/v1794654256/IMG_3015.jpg 500w, https://res.cloudinary.com/ddf0kd8j/image/upload/w_900,c_limit,q_auto,f_auto/v1794654256/IMG_3015.jpg 900w" sizes="(max-width: 760px) calc(100vw - 108px), 500px" alt="Uno spicchio di Nostrano stagionato di Malga Bordolona, con l'occhiatura ben visibile" width="900" height="1200" loading="lazy"></noscript>
         <h3>Nostrano stagionato di Malga Bordolona</h3>
         <p class="price">18 € al chilo</p>
         <div class="cta-row">

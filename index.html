@@ -412,12 +412,22 @@
   .natale-popup-products li {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     gap: 12px;
     padding: 10px 0;
     border-bottom: 1px solid rgba(43, 42, 34, 0.12);
     font-size: 14px;
     color: var(--ink);
+  }
+  .natale-popup-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex: none;
+  }
+  .natale-popup-products li > span {
+    flex: 1 1 auto;
   }
   .natale-popup-products strong {
     font-family: 'Fraunces', serif;
@@ -442,16 +452,6 @@
     text-transform: uppercase;
     color: var(--clay-text);
     margin-left: 8px;
-  }
-
-  .natale-popup-order-note {
-    font-size: 13px;
-    color: #544f3f;
-    margin: 14px 0 0;
-  }
-  .natale-popup-order-note a {
-    color: var(--clay-text);
-    text-decoration: underline;
   }
 
   .natale-popup-body { padding: 0 28px 28px; }
@@ -500,16 +500,26 @@
 
       <div class="natale-popup-body">
         <ul class="natale-popup-products">
-          <li><span>Casolét di Malga Bordolona</span><strong>14 €</strong></li>
-          <li><span>Nostrano fresco di Malga Bordolona</span><strong>14 €</strong></li>
-          <li><span>Nostrano di Malga Bordolona<span class="natale-popup-novita">Novità</span><span class="natale-popup-sub">affinato 40 giorni nelle vinacce di Teroldego</span></span><strong>16 €</strong></li>
-          <li><span>Nostrano di Malga Bordolona<span class="natale-popup-sub">stagionato</span></span><strong>18 €</strong></li>
+          <li>
+            <img class="natale-popup-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_120,h_120,f_auto,q_auto/v1794654251/IMG_3012.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_120,h_120,f_auto,q_auto/v1794654251/IMG_3012.jpg 1x, https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_240,h_240,f_auto,q_auto/v1794654251/IMG_3012.jpg 2x" width="48" height="48" alt="">
+            <span>Casolét di Malga Bordolona</span><strong>14 €</strong>
+          </li>
+          <li>
+            <img class="natale-popup-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_120,h_120,f_auto,q_auto/v1794654252/IMG_3013.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_120,h_120,f_auto,q_auto/v1794654252/IMG_3013.jpg 1x, https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_240,h_240,f_auto,q_auto/v1794654252/IMG_3013.jpg 2x" width="48" height="48" alt="">
+            <span>Nostrano fresco di Malga Bordolona</span><strong>14 €</strong>
+          </li>
+          <li>
+            <img class="natale-popup-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_south,w_120,h_120,f_auto,q_auto/v1794654254/IMG_3014.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_south,w_120,h_120,f_auto,q_auto/v1794654254/IMG_3014.jpg 1x, https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_south,w_240,h_240,f_auto,q_auto/v1794654254/IMG_3014.jpg 2x" width="48" height="48" alt="">
+            <span>Nostrano di Malga Bordolona<span class="natale-popup-novita">Novità</span><span class="natale-popup-sub">affinato 40 giorni nelle vinacce di Teroldego</span></span><strong>16 €</strong>
+          </li>
+          <li>
+            <img class="natale-popup-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_120,h_120,f_auto,q_auto/v1794654256/IMG_3015.jpg" data-srcset="https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_120,h_120,f_auto,q_auto/v1794654256/IMG_3015.jpg 1x, https://res.cloudinary.com/ddf0kd8j/image/upload/c_fill,g_auto,w_240,h_240,f_auto,q_auto/v1794654256/IMG_3015.jpg 2x" width="48" height="48" alt="">
+            <span>Nostrano di Malga Bordolona<span class="natale-popup-sub">stagionato</span></span><strong>18 €</strong>
+          </li>
         </ul>
 
-        <p class="natale-popup-order-note">L'affinato non è ancora nello Shop: <a href="https://wa.me/393483695792?text=Buongiorno%2C%20vorrei%20ordinare%20il%20Nostrano%20di%20Malga%20Bordolona%20affinato%2040%20giorni%20nelle%20vinacce%20di%20Teroldego.%20Peso%20in%20kg%3A%20" aria-label="Ordina su WhatsApp: Nostrano di Malga Bordolona affinato nelle vinacce di Teroldego">scrivici su WhatsApp</a> per ordinarlo.</p>
-
         <div class="natale-popup-actions">
-          <a class="natale-popup-btn natale-popup-btn-primary" href="mailto:info@amalgatrentino.com?subject=Formaggi%20per%20Natale">Scrivici</a>
+          <a class="natale-popup-btn natale-popup-btn-primary" href="shop.html#prodotti" aria-label="Vedi i formaggi nello Shop">Vedi i formaggi</a>
           <a class="natale-popup-btn natale-popup-btn-ghost" href="https://wa.me/393483695792">WhatsApp</a>
         </div>
       </div>
@@ -524,7 +534,17 @@
 
     var STORAGE_KEY = 'natale-popup-seen';
 
-    function openPopup() { overlay.classList.add('is-open'); }
+    function caricaMiniature() {
+      overlay.querySelectorAll('.natale-popup-thumb').forEach(function (img) {
+        if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+        if (img.dataset.src) img.src = img.dataset.src;
+      });
+    }
+
+    function openPopup() {
+      caricaMiniature();
+      overlay.classList.add('is-open');
+    }
     function closePopup() {
       overlay.classList.remove('is-open');
       localStorage.setItem(STORAGE_KEY, '1');
