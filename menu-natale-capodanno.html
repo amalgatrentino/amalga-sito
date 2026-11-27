@@ -55,33 +55,62 @@
   .allergeni-legenda{max-width:760px; color:#544f3f; line-height:1.7;}
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Cenone di Capodanno",
-  "startDate": "2026-12-31T18:00:00+01:00",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "location": {
-    "@type": "Place",
-    "name": "El Malget",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Malga Pradedont",
-      "addressLocality": "Tuenno",
-      "postalCode": "38019",
-      "addressRegion": "TN",
-      "addressCountry": "IT"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Pranzo di Natale",
+    "startDate": "2026-12-25T12:00:00+01:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "El Malget",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Malga Pradedont",
+        "addressLocality": "Tuenno",
+        "postalCode": "38019",
+        "addressRegion": "TN",
+        "addressCountry": "IT"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "70",
+      "priceCurrency": "EUR",
+      "url": "https://amalgatrentino.com/menu-natale-capodanno.html",
+      "availability": "https://schema.org/InStock"
     }
   },
-  "offers": {
-    "@type": "Offer",
-    "price": "100",
-    "priceCurrency": "EUR",
-    "url": "https://amalgatrentino.com/menu-natale-capodanno.html",
-    "availability": "https://schema.org/InStock"
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Cenone di Capodanno",
+    "startDate": "2026-12-31T18:00:00+01:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "El Malget",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Malga Pradedont",
+        "addressLocality": "Tuenno",
+        "postalCode": "38019",
+        "addressRegion": "TN",
+        "addressCountry": "IT"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "100",
+      "priceCurrency": "EUR",
+      "url": "https://amalgatrentino.com/menu-natale-capodanno.html",
+      "availability": "https://schema.org/InStock"
+    }
   }
-}
+]
 </script>
 </head>
 <body>
@@ -125,14 +154,13 @@
   <div class="wrap">
     <span class="eyebrow">Le feste a El Malget</span>
     <h2>Due menù per Natale e Capodanno</h2>
-    <!-- DA CONFERMARE: giorno e orario del pranzo di Natale -->
-    <p class="lede">Il pranzo di Natale e la cena del 31 dicembre, a El Malget, a Tuenno: due appuntamenti con i piatti della nostra cucina di montagna. I posti sono limitati: conviene prenotare per tempo.</p>
+    <p class="lede">Il pranzo di Natale, 25 dicembre ore 12:00, e la cena del 31 dicembre, a El Malget, a Tuenno: due appuntamenti con i piatti della nostra cucina di montagna. I posti sono limitati: conviene prenotare per tempo.</p>
   </div>
 </section>
 
 <section class="section alt gsap-reveal" id="menu-natale">
   <div class="wrap">
-    <span class="eyebrow">Il pranzo di Natale</span>
+    <span class="eyebrow">Il pranzo di Natale, 25 dicembre, ore 12:00</span>
     <h2>Menù di Natale</h2>
     <p class="menu-price">70,00 € a persona</p>
 
@@ -198,7 +226,7 @@
     <span class="eyebrow">Per i più piccoli</span>
     <h2>Menù bambini di Natale</h2>
     <p class="menu-price">40,00 € a persona</p>
-    <!-- DA CONFERMARE: se il buffet è incluso nel menù bambini -->
+    <p class="lede" style="font-style:italic;">Buffet di Natale</p>
 
     <dl class="menu-courses">
       <dt>Primo</dt>
