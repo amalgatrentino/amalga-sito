@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Menù di Natale e Capodanno · El Malget · AMALGA</title>
-<meta name="description" content="Il pranzo di Natale e il cenone di Capodanno a El Malget, a Tuenno in Val di Non: i menù delle feste con i piatti della nostra cucina di montagna.">
+<meta name="description" content="Il pranzo di Natale (25 dicembre, 70 €), il menù bambini (40 €) e il cenone di Capodanno (31 dicembre, 100 €) a El Malget, a Tuenno in Val di Non.">
 <link rel="canonical" href="https://amalgatrentino.com/menu-natale-capodanno.html">
 <meta property="og:title" content="Menù di Natale e Capodanno · El Malget · AMALGA">
-<meta property="og:description" content="Il pranzo di Natale e il cenone di Capodanno a El Malget, a Tuenno in Val di Non: i menù delle feste con i piatti della nostra cucina di montagna.">
+<meta property="og:description" content="Il pranzo di Natale (25 dicembre, 70 €), il menù bambini (40 €) e il cenone di Capodanno (31 dicembre, 100 €) a El Malget, a Tuenno in Val di Non.">
 <meta property="og:url" content="https://amalgatrentino.com/menu-natale-capodanno.html">
 <meta property="og:image" content="https://res.cloudinary.com/ddf0kd8j/image/upload/w_1200,c_limit,q_auto,f_auto/v1795783557/11D408BD-FB35-4A6F-8B85-F9EE56BB769F.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,21 +38,15 @@
   }
   .photo-hero .page-hero-content{ position:relative; z-index:2; }
 
-  .menu-price{font-family:'Fraunces', serif; font-size:1.3rem; color:var(--pine-deep); margin-top:10px;}
-  .section.dark .menu-price{color:#FBF7EE;}
-
-  .menu-courses{margin-top:24px; max-width:720px;}
-  .menu-courses dt{font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--clay-text); margin-top:22px;}
-  .menu-courses dt:first-child{margin-top:0;}
-  .menu-courses dd{margin:8px 0 0;}
-
-  .menu-list{list-style:none; margin:0; padding:0; max-width:720px;}
-  .menu-list li{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:8px 0; border-bottom:1px solid var(--line); color:#544f3f;}
-  .menu-list li:last-child{border-bottom:none;}
-  .menu-list .allergeni{font-size:0.78rem; color:#6b6552; white-space:nowrap; font-family:'Space Mono', monospace;}
-  .section.dark .menu-list li{color:#C6C2AC; border-color:var(--line-dark);}
-
-  .allergeni-legenda{max-width:760px; color:#544f3f; line-height:1.7;}
+  .menu-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line);
+    margin-top:32px;
+  }
+  .menu-card{background:var(--cream); padding:28px 26px; display:flex; flex-direction:column;}
+  .menu-card h3{font-size:1.2rem; color:var(--pine-deep);}
+  .menu-card .sub{display:block; font-style:italic; font-size:0.85rem; color:#6b6552; margin-top:6px;}
+  .menu-card .cta-row{margin-top:20px;}
+  @media(max-width:900px){.menu-grid{grid-template-columns:1fr;}}
 </style>
 <script type="application/ld+json">
 [
@@ -146,7 +140,6 @@
   <a href="#menu-natale">Menù di Natale</a>
   <a href="#menu-bambini">Menù bambini</a>
   <a href="#capodanno">Capodanno</a>
-  <a href="#allergeni">Allergeni</a>
   <a href="#prenotazioni">Prenotazioni</a>
 </nav>
 
@@ -154,138 +147,35 @@
   <div class="wrap">
     <span class="eyebrow">Le feste a El Malget</span>
     <h2>Due menù per Natale e Capodanno</h2>
-    <p class="lede">Il pranzo di Natale, 25 dicembre ore 12:00, e la cena del 31 dicembre, a El Malget, a Tuenno: due appuntamenti con i piatti della nostra cucina di montagna. I posti sono limitati: conviene prenotare per tempo.</p>
-  </div>
-</section>
+    <p class="lede">Il pranzo di Natale e la cena del 31 dicembre, a El Malget, a Tuenno: due appuntamenti con i piatti della nostra cucina di montagna. I posti sono limitati: conviene prenotare per tempo.</p>
 
-<section class="section alt gsap-reveal" id="menu-natale">
-  <div class="wrap">
-    <span class="eyebrow">Il pranzo di Natale, 25 dicembre, ore 12:00</span>
-    <h2>Menù di Natale</h2>
-    <p class="menu-price">70,00 € a persona</p>
+    <div class="menu-grid">
+      <div class="menu-card" id="menu-natale">
+        <h3>Il pranzo di Natale</h3>
+        <p class="sub">25 dicembre, ore 12:00 · 70,00 €</p>
+        <div class="cta-row">
+          <a href="Menu/Menu%20di%20Natale%202026.pdf" target="_blank" rel="noopener" class="cta dark">Apri il menù di Natale (PDF)</a>
+        </div>
+      </div>
 
-    <dl class="menu-courses">
-      <dt>Buffet</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Focacce miste</span><span class="allergeni">1, 7, 8, 11</span></li>
-          <li><span>Pani</span><span class="allergeni">1, 11</span></li>
-          <li><span>Grissini e cracker</span><span class="allergeni">1, 7, 8, 11</span></li>
-          <li><span>Salumi e formaggi</span><span class="allergeni">7, 12</span></li>
-          <li><span>Spiedini di tuberi</span></li>
-          <li><span>Spiedini di salsiccia</span><span class="allergeni">12</span></li>
-          <li><span>Verdure fritte pastellate</span><span class="allergeni">1, 5</span></li>
-          <li><span>Mini buns con trota affumicata</span><span class="allergeni">1, 3, 4, 5, 6, 7, 8, 10, 12</span></li>
-        </ul>
-      </dd>
+      <div class="menu-card" id="menu-bambini">
+        <h3>Il menù dei bambini</h3>
+        <p class="sub">40,00 € · Buffet di Natale</p>
+        <div class="cta-row">
+          <a href="Menu/Menu%20bambini%20Natale%202026.pdf" target="_blank" rel="noopener" class="cta dark">Apri il menù dei bambini (PDF)</a>
+        </div>
+      </div>
 
-      <dt>Antipasto</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Carne salada</span><span class="allergeni">1, 3, 5, 8, 10, 12</span></li>
-        </ul>
-      </dd>
-
-      <dt>Primo</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Cappelletti</span><span class="allergeni">1, 3, 8, 9, 12</span></li>
-        </ul>
-      </dd>
-
-      <dt>Secondo</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Bollito</span></li>
-        </ul>
-      </dd>
-
-      <dt>Dolce</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Panettone</span><span class="allergeni">1, 3, 5, 7, 8, 11, 12</span></li>
-        </ul>
-      </dd>
-
-      <dt>Caffè</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Zelten trentino</span></li>
-        </ul>
-      </dd>
-    </dl>
-
-    <div class="cta-row" style="margin-top:28px;">
-      <a href="Menu/Menu%20di%20Natale%202026.pdf" target="_blank" rel="noopener" class="cta dark">Scarica il menù (PDF)</a>
+      <div class="menu-card" id="capodanno">
+        <h3>Il cenone di Capodanno</h3>
+        <p class="sub">31 dicembre · aperitivo dalle 18:00, cena alle 20:00 · 100 € a persona</p>
+        <div class="cta-row">
+          <a href="Menu/Menu%20di%20Capodanno%202026.pdf" target="_blank" rel="noopener" class="cta dark">Apri il menù di Capodanno (PDF)</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<section class="section gsap-reveal" id="menu-bambini">
-  <div class="wrap">
-    <span class="eyebrow">Per i più piccoli</span>
-    <h2>Menù bambini di Natale</h2>
-    <p class="menu-price">40,00 € a persona</p>
-    <p class="lede" style="font-style:italic;">Buffet di Natale</p>
-
-    <dl class="menu-courses">
-      <dt>Primo</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Gnocchi di patate oppure mezze penne</span></li>
-        </ul>
-      </dd>
-
-      <dt>Secondo</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Cotolette di pollo e patatine fritte</span></li>
-        </ul>
-      </dd>
-
-      <dt>Dolce</dt>
-      <dd>
-        <ul class="menu-list">
-          <li><span>Panettone artigianale con lievito madre, classico e al cioccolato, con gelato artigianale alla crema</span><span class="allergeni">1, 3, 5, 7, 8, 11, 12</span></li>
-        </ul>
-      </dd>
-    </dl>
-
-    <div class="cta-row" style="margin-top:28px;">
-      <a href="Menu/Menu%20bambini%20Natale%202026.pdf" target="_blank" rel="noopener" class="cta dark">Scarica il menù (PDF)</a>
-    </div>
-  </div>
-</section>
-
-<section class="section alt gsap-reveal" id="capodanno">
-  <div class="wrap">
-    <span class="eyebrow">Capodanno</span>
-    <h2>Cenone di Capodanno</h2>
-    <p class="menu-price">100,00 € a persona</p>
-    <p class="lede">Aperitivo dalle 18:00 alle 19:30, cena alle 20:00.</p>
-
-    <ul class="menu-list" style="margin-top:20px;">
-      <li><span>Zuppa di lenticchie</span><span class="allergeni">5, 7, 8, 9, 12</span></li>
-      <li><span>Tortelli di zucca</span><span class="allergeni">1, 3, 7, 9, 12</span></li>
-      <li><span>Guancia di manzo</span><span class="allergeni">5, 7, 9, 12</span></li>
-      <li><span>Buchteln</span><span class="allergeni">1, 3, 5, 7, 8, 12</span></li>
-      <li><span>Caffè e tartufo</span></li>
-    </ul>
-
-    <p style="margin-top:24px; max-width:640px; color:#544f3f;">A mezzanotte: fuochi d'artificio, vin brulé e panettone.</p>
-
-    <div class="cta-row" style="margin-top:28px;">
-      <a href="Menu/Menu%20di%20Capodanno%202026.pdf" target="_blank" rel="noopener" class="cta dark">Scarica il menù (PDF)</a>
-    </div>
-  </div>
-</section>
-
-<section class="section gsap-reveal" id="allergeni">
-  <div class="wrap">
-    <span class="eyebrow">Allergeni</span>
-    <h2>Legenda allergeni</h2>
-    <p class="allergeni-legenda">1 cereali con glutine · 2 crostacei · 3 uova · 4 pesce · 5 arachidi · 6 soia · 7 latte · 8 frutta a guscio · 9 sedano · 10 senape · 11 sesamo · 12 anidride solforosa e solfiti · 13 lupini · 14 molluschi.</p>
-    <p class="lede">Siete pregati di comunicare in anticipo allergie e intolleranze: per qualsiasi informazione rivolgetevi allo staff.</p>
+    <p style="margin-top:28px; max-width:640px; color:#544f3f;">Gli allergeni sono indicati in ogni menù. Siete pregati di comunicare in anticipo allergie e intolleranze: per qualsiasi informazione rivolgetevi allo staff.</p>
   </div>
 </section>
 
