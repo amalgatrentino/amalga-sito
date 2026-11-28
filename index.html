@@ -108,7 +108,23 @@
 
 <div class="wrap gsap-reveal">
   <p style="background:var(--cream-2); border:1px solid var(--line); border-radius:2px; padding:16px 20px; margin-top:28px; max-width:640px; color:#544f3f;">Dal 21 novembre al 24 dicembre: mercatini di Natale, presepi e castelli in Val di Non. <a href="natale-in-val-di-non.html" style="color:var(--clay-text); text-decoration:underline;">Natale in Val di Non: calendario, castelli e un tavolo a El Malget</a></p>
+  <div id="box-feste-natale" style="background:var(--cream-2); border:1px solid var(--line); border-radius:2px; padding:16px 20px; margin-top:12px; max-width:640px;">
+    <p style="font-weight:600; color:var(--pine-deep); margin:0;">Natale e Capodanno a El Malget</p>
+    <p style="color:#544f3f; margin-top:6px;">Il pranzo di Natale e la cena del 31 dicembre. Scoprite i menù.</p>
+    <div class="cta-row" style="margin-top:14px;">
+      <a href="menu-natale-capodanno.html" class="cta dark">Scopri i menù di Natale e Capodanno</a>
+    </div>
+  </div>
 </div>
+<script>
+  (function () {
+    var fine = new Date('2026-12-24T23:59:59+01:00');
+    if (new Date() > fine) {
+      var box = document.getElementById('box-feste-natale');
+      if (box) box.hidden = true;
+    }
+  })();
+</script>
 
 <!-- THESIS -->
 <section class="thesis-block wrap gsap-reveal" id="intro">
@@ -571,6 +587,229 @@
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closePopup();
+    });
+  })();
+</script>
+
+<!-- POP-UP NATALE E CAPODANNO A EL MALGET — attivo dal 1 al 24 dicembre 2026, una sola volta per visitatore. Ha la precedenza sul pop-up della fattoria. -->
+<style>
+  #feste-popup-root {
+    --radius: 20px;
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  #feste-popup-root * { box-sizing: border-box; }
+
+  #feste-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 42, 34, 0.45);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 9998;
+  }
+  #feste-popup-overlay.is-open { opacity: 1; visibility: visible; }
+
+  #feste-popup-card {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    width: 100%;
+    max-width: 420px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--cream);
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: 0 -10px 40px rgba(43, 42, 34, 0.25);
+    z-index: 9999;
+    transition: transform 0.45s cubic-bezier(.2,.9,.25,1);
+  }
+  #feste-popup-overlay.is-open #feste-popup-card { transform: translate(-50%, 0); }
+
+  @media (min-width: 640px) {
+    #feste-popup-card {
+      bottom: 50%;
+      transform: translate(-50%, 60%);
+      opacity: 0;
+      border-radius: var(--radius);
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    #feste-popup-overlay.is-open #feste-popup-card {
+      transform: translate(-50%, 50%);
+      opacity: 1;
+    }
+  }
+
+  #feste-popup-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(43, 42, 34, 0.08);
+    color: var(--pine-deep);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  #feste-popup-close:hover { background: rgba(43, 42, 34, 0.16); }
+
+  .feste-popup-hero {
+    position: relative;
+    padding: 30px 28px 18px;
+    overflow: hidden;
+  }
+  .feste-popup-hero svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: auto; opacity: 0.9; }
+
+  .feste-popup-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay-text);
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .feste-popup-title {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0 0 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .feste-popup-meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--clay-text);
+    margin: 0 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .feste-popup-teaser {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .feste-popup-body { padding: 0 28px 28px; }
+
+  .feste-popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .feste-popup-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    padding: 13px 20px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background 0.2s ease;
+  }
+  .feste-popup-btn-primary { background: var(--pine-deep); color: var(--cream); }
+  .feste-popup-btn-primary:hover { opacity: 0.88; }
+  .feste-popup-btn-ghost { background: transparent; color: var(--ink); border-color: rgba(43, 42, 34, 0.25); }
+  .feste-popup-btn-ghost:hover { background: rgba(43, 42, 34, 0.06); }
+</style>
+
+<div id="feste-popup-root">
+  <div id="feste-popup-overlay">
+    <div id="feste-popup-card" role="dialog" aria-modal="true" aria-labelledby="feste-popup-title" tabindex="-1">
+      <button id="feste-popup-close" aria-label="Chiudi">&times;</button>
+
+      <div class="feste-popup-hero">
+        <p class="feste-popup-eyebrow">Le feste a El Malget</p>
+        <h2 id="feste-popup-title" class="feste-popup-title">Natale e Capodanno a El Malget</h2>
+        <p class="feste-popup-meta">Due tavole per le feste, in Val di Non.</p>
+        <p class="feste-popup-teaser">Pranzo di Natale, 25 dicembre ore 12:00. Cenone di Capodanno, 31 dicembre. Menù e prezzi nella pagina dedicata.</p>
+
+        <svg viewBox="0 0 400 40" preserveAspectRatio="none">
+          <path d="M0,40 L0,26 L60,10 L110,28 L170,4 L230,24 L290,12 L340,30 L400,18 L400,40 Z" fill="#D6A23F" opacity="0.25"/>
+        </svg>
+      </div>
+
+      <div class="feste-popup-body">
+        <div class="feste-popup-actions">
+          <a class="feste-popup-btn feste-popup-btn-primary" href="menu-natale-capodanno.html">Scopri i menù</a>
+          <button type="button" id="feste-popup-close-secondary" class="feste-popup-btn feste-popup-btn-ghost">Chiudi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('feste-popup-overlay');
+    var card = document.getElementById('feste-popup-card');
+    var closeBtn = document.getElementById('feste-popup-close');
+    var closeBtnSecondary = document.getElementById('feste-popup-close-secondary');
+
+    var STORAGE_KEY = 'feste-popup-seen';
+
+    var alreadySeen = false;
+    try { alreadySeen = !!localStorage.getItem(STORAGE_KEY); } catch (e) {}
+
+    function openPopup() {
+      overlay.classList.add('is-open');
+      if (card) card.focus();
+    }
+    function closePopup() {
+      overlay.classList.remove('is-open');
+      try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    }
+
+    var CAMPAIGN_START = new Date('2026-12-01T00:00:00+01:00');
+    var CAMPAIGN_END = new Date('2026-12-24T23:59:59+01:00');
+
+    var now = new Date();
+    if (now >= CAMPAIGN_START && now <= CAMPAIGN_END && !alreadySeen) {
+      window.__popupClaimed = 'feste';
+      setTimeout(openPopup, 2500);
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    closeBtnSecondary.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePopup();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key === 'Escape') { closePopup(); return; }
+      if (e.key === 'Tab') {
+        var focusable = card.querySelectorAll('button, a[href]');
+        if (!focusable.length) return;
+        var first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
     });
   })();
 </script>
